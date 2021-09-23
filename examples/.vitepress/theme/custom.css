@@ -1,0 +1,7 @@
+.theme .page .container {
+  max-width: 80rem;
+}
+
+.theme .page .container h2 {
+  border-bottom: none;
+}

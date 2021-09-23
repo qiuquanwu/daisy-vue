@@ -1,0 +1,214 @@
+$small-padding: 8px;
+$small-height: 24px;
+$small-min-width: 64px;
+
+$default-padding: 16px;
+$default-height: 32px;
+$default-min-width: 72px;
+
+$large-height: 40px;
+$large-min-width: 80px;
+
+@mixin button-style($color, $background-color, $border-color) {
+  @include button-before-style;
+  color: $color;
+  fill: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+
+  &.yoga-button--outline {
+    @include button-before-style($background-color);
+    color: $background-color;
+    fill: $background-color;
+    background-color: transparent;
+    border-color: $border-color;
+  }
+}
+
+@mixin button-before-style($cover-color: $black) {
+  $hover-cover-color: rgba(transparent, 0);
+  $active-cover-color: rgba(transparent, 0);
+  $loading-cover-color: rgba($white, 0.4);
+
+  @if $cover-color {
+    $hover-cover-color: rgba($cover-color, 0.04);
+    $active-cover-color: rgba($cover-color, 0.08);
+  }
+
+  &:hover::before {
+    background-color: $hover-cover-color;
+  }
+
+  &:active::before {
+    background-color: $active-cover-color;
+  }
+}
+
+@mixin button-focus-style($shadow-color) {
+  $focus-box-shadow: 0 0 0 2px $white, 0 0 0 4px rgba($shadow-color, 0.3);
+
+  html[data-focus-visible] &:focus {
+    // sass-lint:disable-line force-attribute-nesting no-qualifying-elements
+    box-shadow: $focus-box-shadow;
+  }
+}
+
+.yoga-button {
+  @include button-style($text-color-primary, $white, $border-color);
+  @include button-focus-style($primary-color);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $default-height;
+  padding: 0 $default-padding;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  transition: $default-all-fast-transition;
+  appearance: none;
+  user-select: none;
+
+  &::before {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: inherit;
+    content: "";
+  }
+
+  &--disabled,
+  &--disabled:hover {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  span {
+    line-height: 1;
+    vertical-align: middle;
+
+    .yoga-icon {
+      vertical-align: text-bottom;
+    }
+  }
+
+  // icon button
+  .yoga-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+  }
+
+  .yoga-icon + span,
+  span + .yoga-icon {
+    margin-left: 8px;
+  }
+
+  // button size
+  &--large {
+    height: $large-height;
+    min-width: $large-min-width;
+    padding: 0 $default-padding;
+    font-size: 14px;
+  }
+
+  &--small {
+    height: $small-height;
+    min-width: $small-min-width;
+    padding: 0 $small-padding;
+    font-size: 12px;
+
+    & .yoga-icon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  // button type
+  &--primary {
+    @include button-style($white, $primary-color, $primary-color);
+  }
+
+  &--secondary {
+    @include button-style($white, $secondary-color, $secondary-color);
+    @include button-focus-style($secondary-color);
+  }
+
+  &--link {
+    @include button-style($blue-light, transparent, transparent);
+    @include button-before-style(false);
+    height: unset;
+    min-width: unset;
+    padding: 0;
+    font-weight: normal;
+
+    &.yoga-button {
+      &:hover::before {
+        background-color: transparent;
+      }
+
+      &:not(.yoga-button--disabled):hover {
+        color: $blue;
+      }
+    }
+
+    & .yoga-icon + span {
+      margin-left: 4px;
+    }
+
+    & span + .yoga-icon {
+      margin-left: 2px;
+    }
+
+    &.underline {
+      text-decoration: underline;
+    }
+  }
+
+  &--dashed {
+    border-color: $gray-5;
+    border-style: dashed;
+
+    &.yoga-button--primary {
+      @include button-style($blue-light, $white, $blue-light);
+      @include button-before-style($blue-light);
+      border-style: dashed;
+    }
+  }
+
+  &--ghost {
+    @include button-style($white, transparent, $white);
+    @include button-before-style($white);
+  }
+
+  &--round {
+    border-radius: 100px;
+  }
+
+  &--circle {
+    min-width: unset;
+    padding: 8px;
+    line-height: 0;
+    border-radius: 100%;
+  }
+
+  &--block {
+    width: 100%;
+  }
+}
