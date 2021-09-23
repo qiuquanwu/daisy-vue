@@ -1,6 +1,7 @@
 module.exports = {
   lang: "zh-CN",
   title: "yui",
+  base: "/yoga-ui/",
   description: "Vue.js 3 Component Library",
 
   vite: {
