@@ -12,7 +12,6 @@ module.exports = {
 
   markdown: {
     lineNumbers: true,
-    anchor: { permalink: true },
     config: (md) => {
       md.use(require("./code-wrapper-plugin"));
     },

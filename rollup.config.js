@@ -6,7 +6,7 @@ import vue from "rollup-plugin-vue";
 import url from "@rollup/plugin-url";
 import json from "@rollup/plugin-json";
 import alias from "@rollup/plugin-alias";
-import replace from "@rollup/plugin-replace";
+// import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";

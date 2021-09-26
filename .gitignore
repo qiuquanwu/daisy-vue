@@ -8,9 +8,5 @@ yarn-error.log
 .vscode
 .idea
 
-# docs/_site
-# docs/.sass-cache
-# docs/.jekyll-cache
-# docs/.jekyll-metadata
-# docs/vendor
-examples/.vitepress/dist
+docs/components
+docs/.vitepress/dist
