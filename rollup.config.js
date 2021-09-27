@@ -18,29 +18,26 @@ const banner = `/**
  * @license MIT
  */`;
 const projectRootDir = path.resolve(__dirname);
+const globals = {
+  vue: 'Vue',
+};
 
 export default {
   input: "src/index.ts",
   output: [
-    // {
-    //   file: pkg.main,
-    //   format: 'umd',
-    //   name: 'yui',
-    //   banner,
-    //   globals: {
-    //     vue: 'Vue',
-    //   },
-    // },
+    {
+      file: pkg.main,
+      format: 'umd',
+      name: 'yui',
+      banner,
+      globals,
+    },
     {
       file: pkg.module,
       format: "es",
       banner,
+      globals,
     },
-    // {
-    //   format: 'umd',
-    //   name: 'yui',
-    //   file: pkg.umd
-    // },
   ],
   external: [
     // 告诉rollup不要将此lodash打包，而作为外部依赖

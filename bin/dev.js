@@ -31,6 +31,6 @@ chokidar
     browserSync.init({
       port: 3002,
       proxy: "http://localhost:3000", //this is the port where express server works
-      reloadDelay: 1500,
+      reloadDelay: 500,
     });
   });

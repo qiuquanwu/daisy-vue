@@ -4,6 +4,7 @@ import CodeWrapper from "../components/code-wrapper.vue";
 import * as components from "../../../dist/yui.es.js";
 import "../../../dist/yui.css";
 import "./custom.css";
+console.log('components', components)
 
 export default {
   ...DefaultTheme,

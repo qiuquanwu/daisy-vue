@@ -1,11 +1,15 @@
-language: node_js
+bunlanguage: node_js
 node_js:
   - lts/*
 install:
   - yarn install # npm ci
+before_script:
+  - rm -rf docs/.vitepress/dist
+  - node bin/deploy.js
 script:
   - yarn build
-  - yarn docs:build
+  - ENV=prod yarn vitepress build docs
+  - node bin/append-meta.js
 deploy:
   provider: pages
   skip_cleanup: true
@@ -13,6 +17,6 @@ deploy:
   # A token generated on GitHub allowing Travis to push code on you repository.
   # Set in the Travis settings page of your repository, as a secure variable.
   github_token: $GITHUB_TOKEN
-  keep_history: true
+  keep_history: false
   on:
     branch: master

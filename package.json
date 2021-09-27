@@ -12,8 +12,7 @@
     "dev": "rm -rf dist & rollup -cw & yarn docs:dev",
     "start": "node bin/dev.js",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
+    "serve": "ENV=dev node bin/deploy.js && vitepress serve docs",
     "lint": "yarn eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write ."
   },

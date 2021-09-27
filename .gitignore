@@ -8,5 +8,4 @@ yarn-error.log
 .vscode
 .idea
 
-docs/components
 docs/.vitepress/dist
