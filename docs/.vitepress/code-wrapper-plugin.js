@@ -18,7 +18,8 @@ module.exports = (md) => {
     const finalCode = rawCode
       .replace(/<\/div>$/, `${lineNumbersWrapperCode}</div>`)
       .replace(/"(language-\w+)"/, '"$1 line-numbers-mode"');
-
-    return `<code-block>${finalCode}</code-block>`;
+    const matches = rawCode.match(/"(language-\w+)"/);
+    const isVue = matches ? matches[1].indexOf('vue') > -1 : false;
+    return `<code-block :showAction="${isVue}">${finalCode}</code-block>`;
   };
 };

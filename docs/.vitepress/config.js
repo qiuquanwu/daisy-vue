@@ -1,4 +1,5 @@
 const env = process.env.ENV || 'dev';
+const routes = require('./routes.json');
 
 module.exports = {
   lang: "zh-CN",
@@ -62,18 +63,5 @@ function getGuideSidebar() {
 }
 
 function getLearnSidebar() {
-  return [
-    {
-      text: "部署",
-      children: [
-        { text: "部署", link: "/learns/deploy/test" },
-      ],
-    },
-    {
-      text: "JavaScript",
-      children: [
-        { text: "JavaScript基础", link: "/learns/javascript/base" },
-      ],
-    },
-  ];
+  return routes;
 }

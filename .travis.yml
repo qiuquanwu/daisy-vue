@@ -6,6 +6,7 @@ install:
 before_script:
   - rm -rf docs/.vitepress/dist
   - node bin/deploy.js
+  - node bin/gen-catalog.js
 script:
   - yarn build
   - ENV=prod yarn vitepress build docs

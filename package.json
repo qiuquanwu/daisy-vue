@@ -14,7 +14,8 @@
     "docs:dev": "vitepress dev docs",
     "serve": "ENV=dev node bin/deploy.js && vitepress serve docs",
     "lint": "yarn eslint src --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "catalog": "node bin/bin/gen-catalog.js"
   },
   "peerDependencies": {
     "vue": "^3.2.19"

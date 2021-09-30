@@ -1,25 +1,25 @@
 <template>
   <div class="code-block" ref="root">
-    <div class="preview-action">
-      <y-button type="link" :icon="sandboxIcon" @click="openCodeSandbox" />
+    <div v-if="showAction" class="preview-action">
+      <y-button
+        type="link"
+        :icon="sandboxIcon"
+        @click="openCodeSandbox" />
       <y-button
         type="link"
         :icon="copyIcon"
         class="copy-icon"
-        @click="copyCode"
-      />
+        @click="copyCode" />
       <y-button
         type="link"
         :icon="editIcon"
         class="edit-icon"
-        @click="openCodeSandbox"
-      />
+        @click="openCodeSandbox" />
       <y-button
         type="link"
         :icon="codeIcon"
         class="code-icon"
-        @click="toggleDisplayCode"
-      />
+        @click="toggleDisplayCode" />
     </div>
     <slot />
   </div>
@@ -34,12 +34,14 @@ import sandboxIcon from "./sandbox.svg";
 import { getCodeSandboxParams } from "./codesandbox";
 
 export default defineComponent({
+  props: {
+    showAction: Boolean, // only vue show actions
+  },
   name: "CodeBlock",
-  setup(_, { slots }) {
+  setup(props, { slots }) {
     const root = ref(null);
     const slot = slots.default ? slots.default() : null;
     const code = slot ? (slot[0].children[0].el || {}).innerText : "";
-
     const openCodeSandbox = () => {
       const div = document.createElement("div");
       const parameters = getCodeSandboxParams(code);
@@ -70,7 +72,9 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      toggleDisplayCode();
+      if (props.showAction) {
+        toggleDisplayCode();
+      }
     });
 
     return {

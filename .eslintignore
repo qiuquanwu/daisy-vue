@@ -10,3 +10,4 @@ coverage
 # disable .(s)css eslint check
 *.css
 *.scss
+*.md
