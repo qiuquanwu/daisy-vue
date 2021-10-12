@@ -32,19 +32,6 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-.btn-wrap {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 14px 24px;
-  margin-left: 16px;
-  border-radius: 4px;
-}
-</style>
-
 ```
 
 </code-wrapper>
@@ -82,19 +69,6 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-.btn-wrap {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 14px 24px;
-  margin-left: 16px;
-  border-radius: 4px;
-}
-</style>
-
 ```
 
 </code-wrapper>
@@ -127,19 +101,6 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-.btn-wrap {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 14px 24px;
-  margin-left: 16px;
-  border-radius: 4px;
-}
-</style>
 
 ```
 
@@ -175,12 +136,6 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-</style>
-
 ```
 
 </code-wrapper>
@@ -206,19 +161,6 @@ export default defineComponent({
   name: "Size",
 });
 </script>
-
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-.btn-wrap {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 14px 24px;
-  margin-left: 16px;
-  border-radius: 4px;
-}
-</style>
 
 ```
 
@@ -255,17 +197,24 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-</style>
-
 ```
 
 </code-wrapper>
 
 
+
+<style lang="scss">
+.yoga-button {
+  margin-bottom: 12px;
+  margin-right: 12px;
+}
+.btn-wrap {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 14px 24px;
+  border-radius: 4px;
+}
+</style>
 
 
 <script>

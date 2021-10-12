@@ -1,4 +1,5 @@
 import DefaultTheme from "vitepress/theme";
+import MyLayout from "./MyLayout.vue";
 import CodeBlock from "../components/code-block.vue";
 import CodeWrapper from "../components/code-wrapper.vue";
 import * as components from "../../../dist/yui.es.js";
@@ -8,6 +9,7 @@ console.log('components', components)
 
 export default {
   ...DefaultTheme,
+  Layout: MyLayout,
   enhanceApp({ app }) {
     app.component(CodeBlock.name, CodeBlock);
     app.component(CodeWrapper.name, CodeWrapper);

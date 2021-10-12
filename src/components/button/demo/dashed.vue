@@ -18,16 +18,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-.btn-wrap {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 14px 24px;
-  margin-left: 16px;
-  border-radius: 4px;
-}
-</style>

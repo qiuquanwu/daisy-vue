@@ -20,9 +20,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.yoga-button {
-  margin-right: 12px;
-}
-</style>
