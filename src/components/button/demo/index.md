@@ -9,7 +9,7 @@
 
 <style lang="scss">
 .yoga-button {
-  margin-bottom: 12px;
+  margin-top: 12px;
   margin-right: 12px;
 }
 .btn-wrap {

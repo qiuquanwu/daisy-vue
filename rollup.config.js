@@ -81,7 +81,7 @@ export default {
     scss({
       output: "dist/yui.css",
       // outputStyle: 'compressed',
-      prefix: `@import "../../../theme/var.scss";`,
+      prefix: `@use "sass:math";@use "sass:map";@import "../../../theme/var.scss";`,
       processor: () => postcss([autoprefixer()]),
       includePaths: [
         path.join(__dirname, "../../node_modules/"),

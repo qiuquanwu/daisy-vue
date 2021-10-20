@@ -13,9 +13,7 @@
   <y-button>Default</y-button>
   <y-button dashed>Dashed</y-button>
   <y-button type="link">Text</y-button>
-  <span class="btn-wrap">
-    <y-button ghost>Ghost</y-button>
-  </span>
+  <y-button type="link" href="/" target="__blank">Render a tag</y-button>
 </template>
 
 <script>
@@ -50,9 +48,7 @@ export default defineComponent({
   <y-button disabled>Default</y-button>
   <y-button disabled dashed>Dashed</y-button>
   <y-button disabled type="link">Text</y-button>
-  <span class="btn-wrap">
-    <y-button disabled ghost>Ghost</y-button>
-  </span>
+  <y-button disabled type="link" href="/" target="__blank">Render a tag</y-button>
 </template>
 
 <script>
@@ -149,16 +145,29 @@ export default defineComponent({
 
  ```vue
 <template>
-  <y-button type="primary" size="small">small</y-button>
-  <y-button type="primary" size="normal">normal</y-button>
-  <y-button type="primary" size="large">large</y-button>
+  <div class="simple-box">
+    <y-button type="primary" size="small">small</y-button>
+    <y-button type="primary" size="normal">normal</y-button>
+    <y-button type="primary" size="large">large</y-button>
+  </div>
+  <div class="simple-box">
+    <y-button type="primary" :icon="AddIcon" size="small">small</y-button>
+    <y-button type="primary" :icon="AddIcon" size="normal">normal</y-button>
+    <y-button type="primary" :icon="AddIcon" size="large">large</y-button>
+  </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import AddIcon from "./add.svg";
 
 export default defineComponent({
   name: "Size",
+  setup() {
+    return {
+      AddIcon,
+    };
+  },
 });
 </script>
 
@@ -178,6 +187,7 @@ export default defineComponent({
   <y-button type="primary" :icon="AddIcon">Add</y-button>
   <y-button :icon="AddIcon">Add</y-button>
   <y-button :icon="AddIcon"></y-button>
+  <y-button><icon :src="AddIcon" /></y-button>
   <y-button :suffix-icon="AddIcon">More</y-button>
   <y-button type="link" :icon="AddIcon">Text Button</y-button>
   <y-button type="link" :suffix-icon="AddIcon">More</y-button>
@@ -205,7 +215,7 @@ export default defineComponent({
 
 <style lang="scss">
 .yoga-button {
-  margin-bottom: 12px;
+  margin-top: 12px;
   margin-right: 12px;
 }
 .btn-wrap {
@@ -247,7 +257,6 @@ export default {
 | outline     | whether the button is an outline button            | Boolean | -                                        | `false`  |
 | frameless   | whether the button is a frameless button           | Boolean | -                                        | `false`  |
 | dashed      | whether the button is a dashed button              | Boolean | -                                        | `false`  |
-| ghost       | whether the button is a ghost button               | Boolean | -                                        | `false`  |
 | full-width  | whether the button is a full-width button          | Boolean | -                                        | `false`  |
 | compact     | whether the button is a compact button             | Boolean | -                                        | `false`  |
 | round       | whether the button is a round button               | Boolean | -                                        | `false`  |

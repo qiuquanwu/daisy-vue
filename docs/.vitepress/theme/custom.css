@@ -77,6 +77,9 @@
   text-decoration: none;
   color: #ee4d2d;
 }
+.theme .simple-box {
+  margin-bottom: 16px;
+}
 
 @media (min-width: 960px) {
   .sidebar {

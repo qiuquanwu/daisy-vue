@@ -16,7 +16,6 @@ export default defineComponent({
     outline: Boolean,
     disabled: Boolean,
     dashed: Boolean,
-    ghost: Boolean,
     fullWidth: Boolean,
     round: Boolean,
     circle: Boolean,
@@ -50,7 +49,6 @@ export default defineComponent({
       dashed,
       circle,
       round,
-      ghost,
       outline,
       icon,
       suffixIcon,
@@ -63,7 +61,6 @@ export default defineComponent({
       [`yoga-button--${size}`]: size,
       "yoga-button--outline": outline,
       "yoga-button--dashed": dashed,
-      "yoga-button--ghost": ghost,
       "yoga-button--block": fullWidth,
       "yoga-button--round": round,
       "yoga-button--circle": circle,
@@ -80,7 +77,7 @@ export default defineComponent({
       props.onClick?.(event);
     };
     const propsData = href
-      ? { class: buttonClass, href, target, onClick }
+      ? { class: buttonClass, href: disabled ? null : href, target, onClick }
       : { class: buttonClass, type: nativeType, disabled, onClick };
     const children = [];
     if (icon) {

@@ -1,13 +1,45 @@
-$small-padding: 8px;
+$small-padding: 5px;
 $small-height: 24px;
-$small-min-width: 64px;
-
-$default-padding: 16px;
+$small-icon-size: 12px;
+$small-font-size: 12px;
+$small-min-with: 64px;
+$default-padding: 7px;
 $default-height: 32px;
-$default-min-width: 72px;
-
+$default-icon-size: 16px;
+$default-font-size: 14px;
+$default-min-with: 72px;
+$large-padding: 10px;
 $large-height: 40px;
-$large-min-width: 80px;
+$large-icon-size: 16px;
+$large-font-size: 14px;
+$large-min-with: 80px;
+// maps
+$height-maps: ("large": $large-height, "normal": $default-height, "small": $small-height);
+$padding-maps: ("large": 0 $large-padding, "normal": 0 $default-padding, "small": 0 $small-padding);
+$font-size-maps: ("large": $large-font-size, "normal": $default-font-size, "small": $small-font-size);
+$icon-size-maps: ("large": $large-icon-size, "normal": $default-icon-size, "small": $small-icon-size);
+$min-width-maps: ("large": $large-min-with, "normal": $default-min-with, "small": $small-min-with);
+
+@mixin useSize {
+  @each $size, $value in $padding-maps {
+    &.yoga-button--#{$size} {
+      padding: $value;
+      height: map.get($height-maps, $size);
+      font-size: map.get($font-size-maps, $size);
+      min-width: map.get($min-width-maps, $size);
+
+      .yoga-icon {
+        width: map.get($icon-size-maps, $size);
+        height: map.get($icon-size-maps, $size);
+      }
+
+      &.yoga-button--circle,
+      &.yoga-button--link {
+        min-width: unset;
+      }
+    }
+  }
+}
 
 @mixin button-style($color, $background-color, $border-color) {
   @include button-before-style;
@@ -48,7 +80,6 @@ $large-min-width: 80px;
   $focus-box-shadow: 0 0 0 2px $white, 0 0 0 4px rgba($shadow-color, 0.3);
 
   html[data-focus-visible] &:focus {
-    // sass-lint:disable-line force-attribute-nesting no-qualifying-elements
     box-shadow: $focus-box-shadow;
   }
 }
@@ -110,8 +141,6 @@ $large-min-width: 80px;
 
   // icon button
   .yoga-icon {
-    width: 16px;
-    height: 16px;
     vertical-align: middle;
   }
 
@@ -121,24 +150,7 @@ $large-min-width: 80px;
   }
 
   // button size
-  &--large {
-    height: $large-height;
-    min-width: $large-min-width;
-    padding: 0 $default-padding;
-    font-size: 14px;
-  }
-
-  &--small {
-    height: $small-height;
-    min-width: $small-min-width;
-    padding: 0 $small-padding;
-    font-size: 12px;
-
-    & .yoga-icon {
-      width: 12px;
-      height: 12px;
-    }
-  }
+  @include useSize;
 
   // button type
   &--primary {
@@ -182,7 +194,7 @@ $large-min-width: 80px;
   }
 
   &--dashed {
-    border-color: $gray-5;
+    border-color: $black-d8;
     border-style: dashed;
 
     &.yoga-button--primary {
@@ -190,11 +202,6 @@ $large-min-width: 80px;
       @include button-before-style($blue-light);
       border-style: dashed;
     }
-  }
-
-  &--ghost {
-    @include button-style($white, transparent, $white);
-    @include button-before-style($white);
   }
 
   &--round {

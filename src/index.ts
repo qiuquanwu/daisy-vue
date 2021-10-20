@@ -1,3 +1,10 @@
 export * from "./create";
-export { Icon, Button, Radio, Form, FormItem } from "./components";
 export * from "./preset";
+export {
+  Icon,
+  Button,
+  Radio,
+  RadioGroup,
+  Form,
+  FormItem,
+} from "./components";

@@ -1,7 +1,7 @@
-$radio-indicator-border-color: $gray-4;
-$radio-disabled-bg-color: $gray-3;
-$radio-disabled-border-color: $gray-5;
-$radio-disabled-text-color: $gray-6;
+$radio-indicator-border-color: $black-e5;
+$radio-disabled-bg-color: $black-ee;
+$radio-disabled-border-color: $black-d8;
+$radio-disabled-text-color: $black-b7;
 $radio-indicator-square: 16px;
 $radio-indicator-margin: 8px;
 
@@ -55,7 +55,7 @@ $radio-indicator-margin: 8px;
 
   &.disabled {
     color: $radio-disabled-text-color;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
 
     .yoga-radio__indicator {
       background-color: $radio-disabled-bg-color;

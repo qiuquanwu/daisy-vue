@@ -106,6 +106,7 @@ export interface ValidateCallback {
 }
 
 export const FormKey = "YogaForm";
+export const FormItemKey = "YogaFormItem";
 
 export interface ErrorHandlerConfig {
   scrollToError?: boolean;

@@ -12,7 +12,7 @@ $large-form-item-height: 40px;
 
   &__label {
     flex-shrink: 0;
-    padding: ($normal-form-item-height - $form-item-label-line-height) / 2 0;
+    padding: math.div($normal-form-item-height - $form-item-label-line-height, 2) 0;
     margin-right: 16px;
     line-height: $form-item-label-line-height;
     box-sizing: border-box;
@@ -47,7 +47,7 @@ $large-form-item-height: 40px;
     padding-top: 4px;
     font-size: 12px;
     line-height: 16px;
-    color: $gray-8;
+    color: $black-66;
   }
 
   &__error {
@@ -78,7 +78,7 @@ $large-form-item-height: 40px;
 
     .yoga-form-item {
       &__label {
-        padding: ($small-form-item-height - $form-item-label-line-height) / 2 0;
+        padding: math.div($small-form-item-height - $form-item-label-line-height, 2) 0;
       }
 
       &__content {
@@ -100,7 +100,7 @@ $large-form-item-height: 40px;
 
     .yoga-form-item {
       &__label {
-        padding: ($large-form-item-height - $form-item-label-line-height) / 2 0;
+        padding: math.div($large-form-item-height - $form-item-label-line-height, 2) 0;
       }
 
       &__content {

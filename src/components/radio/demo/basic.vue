@@ -15,7 +15,7 @@
       v-model="radioValue3"
       @change="handleValueChange"
     >
-      RadioA
+      Boy
     </y-radio>
     <y-radio
       name="radio-demo"
@@ -23,7 +23,7 @@
       v-model="radioValue3"
       @change="handleValueChange"
     >
-      RadioB
+      Girl
     </y-radio>
   </div>
 </template>

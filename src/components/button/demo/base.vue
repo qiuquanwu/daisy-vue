@@ -4,9 +4,7 @@
   <y-button>Default</y-button>
   <y-button dashed>Dashed</y-button>
   <y-button type="link">Text</y-button>
-  <span class="btn-wrap">
-    <y-button ghost>Ghost</y-button>
-  </span>
+  <y-button type="link" href="/" target="__blank">Render a tag</y-button>
 </template>
 
 <script>

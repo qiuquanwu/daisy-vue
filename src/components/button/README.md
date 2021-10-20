@@ -9,7 +9,6 @@
 | outline     | whether the button is an outline button            | Boolean | -                                        | `false`  |
 | frameless   | whether the button is a frameless button           | Boolean | -                                        | `false`  |
 | dashed      | whether the button is a dashed button              | Boolean | -                                        | `false`  |
-| ghost       | whether the button is a ghost button               | Boolean | -                                        | `false`  |
 | full-width  | whether the button is a full-width button          | Boolean | -                                        | `false`  |
 | compact     | whether the button is a compact button             | Boolean | -                                        | `false`  |
 | round       | whether the button is a round button               | Boolean | -                                        | `false`  |

@@ -9,7 +9,6 @@ export interface ButtonProps {
   outline?: boolean;
   fullWidth?: boolean;
   dashed?: boolean;
-  ghost?: boolean;
   round?: boolean;
   circle?: boolean;
   icon?: string;

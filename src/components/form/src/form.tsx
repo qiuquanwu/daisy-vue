@@ -164,7 +164,7 @@ export default defineComponent({
   render() {
     return (
       <form class={this.formClass} autocomplete={this.autocomplete}>
-        {this.$slots.default()}
+        {this.$slots?.default()}
       </form>
     );
   },

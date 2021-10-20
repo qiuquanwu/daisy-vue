@@ -10,6 +10,7 @@ import {
   toRefs,
   onBeforeUnmount,
   inject,
+  provide,
   renderSlot,
 } from "vue";
 import {
@@ -19,6 +20,7 @@ import {
   formItemProps,
   FormItemProps,
   FormKey,
+  FormItemKey,
   FormRule,
   ValidatorFn,
 } from "@components/form/types";
@@ -235,6 +237,7 @@ export default defineComponent({
       reset,
       validate,
     });
+    provide(FormItemKey, formItem);
     onMounted(() => {
       formEl.formMitt.emit("addField", formItem);
 
