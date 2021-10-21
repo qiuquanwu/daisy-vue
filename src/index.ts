@@ -7,4 +7,5 @@ export {
   RadioGroup,
   Form,
   FormItem,
+// {{COMPONENT}}
 } from "./components";

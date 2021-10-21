@@ -14,7 +14,8 @@
     "serve": "ENV=dev node bin/deploy.js && vitepress serve docs",
     "lint": "yarn eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write .",
-    "catalog": "node bin/gen-catalog.js"
+    "catalog": "node bin/gen-catalog.js",
+    "new": "node bin/new-component.js"
   },
   "peerDependencies": {
     "vue": "^3.2.19"
@@ -32,6 +33,7 @@
     "@typescript-eslint/parser": "^4.31.0",
     "autoprefixer": "^10.3.1",
     "browser-sync": "^2.27.4",
+    "camelcase": "^6.2.0",
     "chalk": "^4.1.1",
     "chokidar": "^3.5.2",
     "eslint": "^7.32.0",
@@ -53,7 +55,8 @@
     "vitepress": "^0.19.1",
     "vue": "^3.2.19",
     "vue-eslint-parser": "^7.11.0",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "write": "^2.0.0"
   },
   "dependencies": {
     "async-validator": "^4.0.3",

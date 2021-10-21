@@ -98,7 +98,12 @@ function updateMdByPath(event, path) {
   return Promise.resolve();
 }
 
+function lowerHyphenate(s) {
+  return s.replace(/([A-Z])/g, '-$1').replace(/(\/|^)-/, '$1').toLowerCase();
+};
+
 module.exports = {
   updateMdByPath,
   execSyncHandler,
+  lowerHyphenate,
 };
