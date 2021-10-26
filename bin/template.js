@@ -82,14 +82,14 @@ module.exports.componentReadme = {
 `};
 
 // src/components/index.ts
-module.exports.componentReadme = {
+module.exports.component = {
   path: 'src/components/index.ts',
   event: 'update',
   temp: 'export * from "./{{component}}";'
 };
 
 // src/index.ts
-module.exports.component = {
+module.exports.index = {
   path: 'src/index.ts',
   event: 'update',
   temp: '  {{COMPONENT}},'

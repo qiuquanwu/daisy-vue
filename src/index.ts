@@ -7,5 +7,7 @@ export {
   RadioGroup,
   Form,
   FormItem,
+  Checkbox,
+  CheckboxGroup,
 // {{COMPONENT}}
 } from "./components";

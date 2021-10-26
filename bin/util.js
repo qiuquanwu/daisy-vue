@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { resolve } = require("path");
+const camelCase = require('camelcase');
 const { execSync } = require("child_process");
 const capitalize = require("lodash/capitalize");
 
@@ -19,11 +20,11 @@ function updateMdByComponentName(componentName) {
       "utf-8"
     );
 
-    if (mdFile && /<!-- ([a-zA-Z]*) -->/.test(mdFile)) {
+    if (mdFile && /<!-- ([a-zA-Z-]*) -->/.test(mdFile)) {
       let scripts = [];
       let importNames = [];
-      mdFile = mdFile.replace(/<!-- ([a-zA-Z]*) -->/g, ($1) => {
-        const demoName = $1.replace(/<!-- ([a-zA-Z]*) -->/, "$1");
+      mdFile = mdFile.replace(/<!-- ([a-zA-Z-]*) -->/g, ($1) => {
+        const demoName = $1.replace(/<!-- ([a-zA-Z-]*) -->/, "$1");
 
         try {
           const mdFile = fs.readFileSync(
@@ -33,9 +34,7 @@ function updateMdByComponentName(componentName) {
             ),
             "utf-8"
           );
-          const importName = `${capitalize(componentName)}${capitalize(
-            demoName
-          )}`;
+          const importName = `${capitalize(componentName)}${camelCase(demoName, { pascalCase: true })}`;
           importNames.push(importName);
           scripts.push(
             `import ${importName} from '../../src/components/${componentName}/demo/${demoName}.vue';`

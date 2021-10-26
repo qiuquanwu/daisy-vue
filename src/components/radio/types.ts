@@ -5,7 +5,7 @@ export const radioProps = {
   /** v-model的绑定 */
   modelValue: {
     type: [Boolean, String, Number],
-    default: null,
+    default: null, // 必须显示指定default为null, 否则默认的modelValue为false
   },
   /** 当前radio value, 如果modelValue和value一致，则checked=true */
   value: {

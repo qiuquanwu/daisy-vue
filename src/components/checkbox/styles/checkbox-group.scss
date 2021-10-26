@@ -4,8 +4,8 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
 
 @mixin useSize {
   @each $size, $value in $padding-maps {
-    &.yoga-radio-group--#{$size} {
-      .yoga-radio {
+    &.yoga-checkbox-group--#{$size} {
+      .yoga-checkbox {
         padding: $value;
 
         &__label {
@@ -27,10 +27,9 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
 }
 
 @mixin useGroup($type) {
-  &.yoga-radio-group--#{$type} {
-    .yoga-radio {
+  &.yoga-checkbox-group--#{$type} {
+    .yoga-checkbox {
       line-height: 1;
-      white-space: nowrap;
       vertical-align: middle;
       border: 1px solid $border-color;
       border-left: 0;
@@ -53,11 +52,11 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
           background-color: $black-ee;
           border-color: $border-color;
 
-          .yoga-radio__label {
+          .yoga-checkbox__label {
             color: $black-66;
           }
         } @else if $type == "outline" {
-          .yoga-radio__label {
+          .yoga-checkbox__label {
             color: $black-99;
           }
         }
@@ -67,12 +66,14 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
         border-color: $primary-color;
         @if $type == "solid" {
           background-color: $primary-color;
-
-          .yoga-radio__label {
+          &::before {
+            background-color: $white !important;
+          }
+          .yoga-checkbox__label {
             color: $white;
           }
         } @else if $type == "outline" {
-          .yoga-radio__label {
+          .yoga-checkbox__label {
             color: $primary-color;
           }
         }
@@ -99,19 +100,18 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
   }
 }
 
-.yoga-radio-group {
-  white-space: nowrap;
+.yoga-checkbox-group {
   font-size: 0;
 
-  .yoga-radio:not(:last-child) {
-    margin-right: 16px
+  .yoga-checkbox:not(:last-child) {
+    margin-right: 16px;
   }
 
   &--vertical {
     display: flex;
     flex-direction: column;
 
-    .yoga-radio {
+    .yoga-checkbox {
       margin: 5px 0;
     }
   }

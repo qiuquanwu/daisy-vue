@@ -61,6 +61,7 @@ function getGuideSidebar() {
     { text: "图标 Icon", link: "/components/icon" },
     { text: "按钮 Button", link: "/components/button" },
     { text: "单选框 Radio", link: "/components/radio" },
+    { text: "复选框 Checkbox", link: "/components/checkbox" },
     { text: "表单 Form", link: "/components/form" },
   ];
   return [
