@@ -6,7 +6,6 @@ console.log('hello');
 console.info('信息');
 console.error('错误');
 console.warn('警告');
-
 ```
 
 ## 占位符
@@ -23,21 +22,20 @@ console上述的集中度支持printf的占位符格式，支持的占位符有�
 
 ```
 console.log("%d年%d月%d日",2011,3,26);
-
 ```
 
 %o、%O都是用来输出Object对象的，对普通的Object对象，两者没区别，但是打印dom节点时就不一样了：
 ```js
-// 格式成可展开的的DOM，像在开发者工具Element面板那样可展开 
-console.log('%o',document.body.firstElementChild); 
-// 像JS对象那样访问DOM元素，可查看DOM元素的属性 
-// 等同于console.dir(document.body.firstElementChild) 
+// 格式成可展开的的DOM，像在开发者工具Element面板那样可展开
+console.log('%o',document.body.firstElementChild);
+// 像JS对象那样访问DOM元素，可查看DOM元素的属性
+// 等同于console.dir(document.body.firstElementChild)
 console.log('%O',document.body.firstElementChild);
 ```
 
 %c占位符是最常用的。使用%c占位符时，对应的后面的参数必须是CSS语句，用来对输出内容进行CSS渲染。常见的输出方式有两种：文字样式、图片输出。
 ```js
-console.log("%cHello world,欢迎您！","color: red; font-size: 20px"); 
+console.log("%cHello world,欢迎您！","color: red; font-size: 20px");
 //输出红色的、20px大小的字符串：Hello world,欢迎您！
 ```
 
@@ -49,13 +47,13 @@ console.log("%cHello world,欢迎您！","color: red; font-size: 20px");
 ## 信息分组
 ```js
 console.group("第一组信息");
-  console.log("第一组第一条:我的博客(http://www.ido321.com)");
-　console.log("第一组第二条:CSDN(http://blog.csdn.net/u011043843)");
+console.log("第一组第一条:我的博客(http://www.ido321.com)");
+console.log("第一组第二条:CSDN(http://blog.csdn.net/u011043843)");
 console.groupEnd();
 
 console.group("第二组信息");
-　console.log("第二组第一条:程序爱好者QQ群： 259280570");
-  console.log("第二组第二条:欢迎你加入");
+console.log("第二组第一条:程序爱好者QQ群： 259280570");
+console.log("第二组第二条:欢迎你加入");
 console.groupEnd();
 ```
 
@@ -152,7 +150,7 @@ console.trace()用来追踪函数的调用轨迹
      }
 　　　funcB(10000);
 　　}
-   
+
   function funcA(count){
     for(var i=0;i<count;i++){}
   }
@@ -168,3 +166,12 @@ console.trace()用来追踪函数的调用轨迹
 ```
 
 ![img](https://cloud.githubusercontent.com/assets/7871813/17443637/438c79b4-5b6e-11e6-896a-5d9a0c5da63d.png)
+
+```js
+var str = "World Internet Conference";
+console.log(str.match(/[a-d]/i)); // ["d", index: 4, input: "World Internet Conference"]
+console.log(str.match(/[a-d]/gi)); // ["d", "C", "c"]
+// RegExp 方法如下
+console.log(/[a-d]/gi.test(str)); // true
+console.log(/[a-d]/gi.exec(str)); // ["d", index: 4, input: "World Internet Conference"]
+```

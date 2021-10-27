@@ -495,14 +495,14 @@ copyWithin() 方法基于ECMAScript 2015（ES6）规范，用于数组内元素�
 * 如果start为负，则其指定的索引位置等同于length+start，length为数组的长度。end也是如此。
 
 ```js
-var array = [1,2,3,4,5]; 
+var array = [1,2,3,4,5];
 var array2 = array.copyWithin(0,3);
 console.log(array===array2,array2); // true [4, 5, 3, 4, 5]
 
-var array = [1,2,3,4,5]; 
+var array = [1,2,3,4,5];
 console.log(array.copyWithin(0,3,4)); // [4, 2, 3, 4, 5]
 
-var array = [1,2,3,4,5]; 
+var array = [1,2,3,4,5];
 console.log(array.copyWithin(0,-2,-1)); // [4, 2, 3, 4, 5]
 ```
 
@@ -658,10 +658,10 @@ console.log(o.toString()==o2); // true
 > 根据ES5语义，toString() 方法是通用的，可被用于任何对象。如果对象有一个join() 方法，将会被调用，其返回值将被返回，没有则调用Object.prototype.toString()，为此，我们给o对象添加一个join方法。如下：
 ```js
 var o = {
-  0:'Jan', 
-  1:'Feb', 
-  2:'Mar', 
-  length:3, 
+  0:'Jan',
+  1:'Feb',
+  2:'Mar',
+  length:3,
   join:function(){
     return Array.prototype.join.call(this);
   }
@@ -687,10 +687,10 @@ console.log(str); // [object Object],123,abc,2016/1/5 下午1:06:23
 其鸭式辨型的写法也同toString 保持一致，如下：
 ```js
 var o = {
-  0:123, 
-  1:'abc', 
-  2:new Date(), 
-  length:3, 
+  0:123,
+  1:'abc',
+  2:new Date(),
+  length:3,
   join:function(){
     return Array.prototype.join.call(this);
   }
@@ -1030,7 +1030,7 @@ console.log(iterator.next().value);//xyz
 ### Symbol.iterator(ES6)
 该方法基于ECMAScript 2015（ES6）规范，同 values 方法功能相同。
 
-语法：arr[Symbol.iterator]()
+语法：`arr[Symbol.iterator]()`
 ```js
 var array = ["abc", "xyz"];
 var iterator = array[Symbol.iterator]();
