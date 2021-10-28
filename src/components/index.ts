@@ -3,4 +3,5 @@ export * from "./icon";
 export * from "./form";
 export * from "./radio";
 export * from "./checkbox";
+export * from "./switch";
 // {{COMPONENT}}

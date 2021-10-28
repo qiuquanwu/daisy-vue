@@ -62,6 +62,7 @@ function getGuideSidebar() {
     { text: "按钮 Button", link: "/components/button" },
     { text: "单选框 Radio", link: "/components/radio" },
     { text: "复选框 Checkbox", link: "/components/checkbox" },
+    { text: "开关 Switch", link: "/components/switch" },
     { text: "表单 Form", link: "/components/form" },
   ];
   return [

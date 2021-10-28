@@ -78,7 +78,7 @@ module.exports.componentReadme = {
   path: 'src/components/{{component}}/README.md',
   temp: `## API
 
-### {{COMPONENT}} props;
+### {{COMPONENT}} props
 `};
 
 // src/components/index.ts

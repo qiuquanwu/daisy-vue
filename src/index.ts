@@ -9,5 +9,6 @@ export {
   FormItem,
   Checkbox,
   CheckboxGroup,
+  Switch,
 // {{COMPONENT}}
 } from "./components";
