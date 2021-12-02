@@ -10,5 +10,7 @@ export {
   Checkbox,
   CheckboxGroup,
   Switch,
+  Input,
+  InputGroup,
 // {{COMPONENT}}
 } from "./components";

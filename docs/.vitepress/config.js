@@ -25,6 +25,10 @@ module.exports = {
 
         md.__data = {}
         const html = render.call(md, src)
+        const matches = html.match(/<h1 id="([a-zA-Z-]+)"/) // 获取当前页面h1标签id
+        if (matches) {
+          return `<div class="page-container ${matches[1]}-pages">${html}</div>`
+        }
         return html
       };
       md.render = wrappedRender;
@@ -63,6 +67,7 @@ function getGuideSidebar() {
     { text: "单选框 Radio", link: "/components/radio" },
     { text: "复选框 Checkbox", link: "/components/checkbox" },
     { text: "开关 Switch", link: "/components/switch" },
+    { text: "输入框 Input", link: "/components/input" },
     { text: "表单 Form", link: "/components/form" },
   ];
   return [

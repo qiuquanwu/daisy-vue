@@ -1,4 +1,13 @@
-import { isPlainObject, isArray, isFunction, NOOP } from "@vue/shared";
+import { isPlainObject, isArray, isFunction, NOOP, toTypeString } from "@vue/shared";
+
+/**
+ * whether the object is a Regular Expression
+ * @param {Object} object the given object
+ * @return {Boolean}
+ */
+ export function isRegExp(value: string): boolean {
+  return toTypeString(value) === '[object RegExp]';
+}
 
 export { isArray, isPlainObject, isFunction, NOOP };
 

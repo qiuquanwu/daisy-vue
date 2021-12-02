@@ -2,15 +2,37 @@
   max-width: 80rem;
 }
 
+.theme .nav-bar {
+  top: 3px;
+  height: 64px;
+  border-bottom: none;
+  box-shadow: 0 8px 24px -2px rgba(0,0,0,.05);
+}
+
 .theme .page .container h2 {
   border-bottom: none;
 }
-
+.theme .nav-links .nav-link .item::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  bottom: -17px;
+  height: 2px;
+  opacity: 0;
+  background-color: transparent;
+  transition: background-color .45s;
+}
 .theme .nav-links .nav-link .item.active {
+  position: relative;
   color: #ee4d2d;
   font-weight: 500;
   transform: scale(1.05);
   border-color: transparent;
+}
+.theme .nav-links .nav-link .item.active::after {
+  opacity: 1;
+  background-color: #ee4d2d;
 }
 .theme .nav-links .item:hover .nav-link .item {
   color: #ee4d2d;
@@ -27,13 +49,50 @@
   font-size: 14px;
   color: #333;
   line-height: 1.75;
-  padding: 5px 5px 5px 24px;
+  padding: 5px 5px 5px 38px;
+}
+.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  margin-top: -2.5px;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+}
+.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 3px;
+  visibility: hidden;
+  opacity: 0;
+  transition: background-color .3s;
+  border-radius: 1px;
 }
 .theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item.active {
+  position: relative;
   color: #ee4d2d;
-  border-left-color: transparent;
-  background-color:#ffe9e8;
-  transition: all .45s ease-in-out;
+  background: linear-gradient(200deg,#ffe9e8,rgba(248,250,255,0));
+  transition: background .45s ease-in-out;
+}
+.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item.active::before {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  background-color: #ee4d2d;
+}
+.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item.active::after {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  background-color: #ee4d2d;
 }
 .theme .sidebar a.sidebar-link-item.active,
 .theme .sidebar a.sidebar-link-item:hover {
@@ -42,7 +101,7 @@
 .theme .sidebar a.sidebar-link-item {
   display: none !important;
   border-radius: 3px;
-  margin: 5px 8px;
+  margin: 5px 0px 5px -4px;
 }
 .theme .page .container {
   max-width: calc(80rem - 160px);

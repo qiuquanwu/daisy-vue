@@ -1,4 +1,7 @@
 <template>
+  <div class="read-pro">
+    <div class="read-pro__inner"></div>
+  </div>
   <Layout />
 </template>
 
@@ -30,6 +33,7 @@ const slugify = (str) => {
   )
 }
 const handleScroll = () => {
+  const readProInner = document.querySelector('.read-pro__inner');
   const toc = document.querySelector('.table-of-contents');
   const tocLi = toc.querySelectorAll('li');
   tocLi && tocLi[0] && tocLi[0].classList.add('active');
@@ -39,6 +43,12 @@ const handleScroll = () => {
     if(!scrolling) {
 		  scrolling = true;
       requestAnimationFrame(() => {
+        // 处理顶部进度条
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProInner.style.width = + (scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100 + '%';
+
         const hash = decodeURIComponent(window.location.hash).slice(1);
         tocLi.forEach(li => {
           if (slugify(li.querySelector('a').innerText) === hash) {
@@ -58,6 +68,11 @@ watch(route, value => {
   nextTick(() => {
     if (value.path !== oldPath) {
       oldPath = value.path;
+      // 清除上一次的记录
+      const readProInner = document.querySelector('.read-pro__inner');
+      if (readProInner) {
+        readProInner.style.width = '0%';
+      }
       handleScroll();
     }
   });
@@ -67,3 +82,24 @@ onMounted(() => {
   handleScroll()
 });
 </script>
+
+<style lang="scss" scoped>
+.read-pro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 9999;
+  background-color: #ffffff;
+
+  &__inner {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(270deg,#ee4d2d,rgba(248,250,255,0));
+  }
+}
+</style>
