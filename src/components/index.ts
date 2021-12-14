@@ -6,4 +6,5 @@ export * from "./checkbox";
 export * from "./switch";
 export * from "./input";
 export * from "./popper";
+export * from "./tooltip";
 // {{COMPONENT}}

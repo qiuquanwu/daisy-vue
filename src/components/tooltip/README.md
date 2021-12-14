@@ -1,11 +1,18 @@
 ## API
 
+### Tooltip props
+继承Popper props，但有以下改动
+| Property | Description | Type | Accepted Values | Default |
+|:--|:--|:--|:--|:--|
+| modelValue | the visible of tooltip, will override trigger and turn on manual mode | Boolean | - | `undefined` |
+| show-arrow | whether the popover is with arrow | Boolean | - | `false` |
+| placement | the placement of popover | String | `top`/`top-start`/`top-end`/`right`/`right-start`/`right-end`/`bottom`/`bottom-start`/`bottom-end`/`left`/`left-start`/`left-end` | `top` |
 ### Popper props
 | Property | Description | Type | Accepted Values | Default |
 |:--|:--|:--|:--|:--|
 | visible | the visible of popover, will override trigger and turn on manual mode | Boolean | - | `undefined` |
 | disabled | whether disabled the popover, when disabled the popover will not be shown | Boolean | - | `false` |
-| placement | the placement of popover | String | `top`/`top-start`/`top-end`/`right`/`right-start`/`right-end`/`bottom`/`bottom-start`/`bottom-end`/`left`/`left-start`/`left-end` | `bottom` |
+| placement | the placement of popover | String | `top`/`top-start`/`top-end`/`right`/`right-start`/`right-end`/`bottom`/`bottom-start`/`bottom-end`/`left`/`left-start`/`left-end` | `top` |
 | trigger | how to trigger the popover | String | `hover`/`click`/`focus` | `hover` |
 | content | the content of popover | String | - | - |
 | theme | the theme of popover | String | `dark`/`light` | `dark` |
@@ -25,13 +32,10 @@
 ### Events
 | Event | Description | Parameters |
 |:--|:--|:--|
-| after-enter | trigger after mouse enter popover | - |
-| after-leave | trigger after mouse leave popover | - |
-| before-enter | trigger before mouse enter popover | - |
-| before-leave | trigger before mouse leave popover | - |
+| update:modelValue | trigger when tooltip visible change | visible: boolean |
 
 ### Slots
 | Name | Description | Parameters |
 |:--|:--|:--|
-| default | popper display element | - |
-| trigger | popper trigger element | - |
+| default | tooltip trigger element | - |
+| content | tooltip content, which will override content props | - |

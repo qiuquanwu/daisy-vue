@@ -16,3 +16,5 @@ export type PopperPlacement =
   | 'right'
   | 'right-start'
   | 'right-end';
+
+export const UPDATE_MODEL_EVENT = 'update:modelValue';

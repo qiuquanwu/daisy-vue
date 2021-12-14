@@ -5,8 +5,6 @@ export const on = (
   useCapture = false
 ): void => {
   if (element && eventName && handler) {
-    console.log('on', element, eventName, handler);
-
     element?.addEventListener(eventName, handler, useCapture);
   }
 };

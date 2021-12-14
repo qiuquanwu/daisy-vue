@@ -71,7 +71,8 @@ function getGuideSidebar() {
     { text: "表单 Form", link: "/components/form" },
   ];
   const messages = [
-    { text: '气泡 Popper', link: "/components/popper" },
+    { text: '定位引擎 Popper', link: "/components/popper" },
+    { text: '文字提示 Tooltip', link: "/components/tooltip" },
   ];
 
   return [

@@ -13,5 +13,6 @@ export {
   Input,
   InputGroup,
   Popper,
+  Tooltip,
 // {{COMPONENT}}
 } from "./components";
