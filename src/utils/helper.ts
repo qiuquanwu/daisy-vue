@@ -1,15 +1,18 @@
-import { isPlainObject, isArray, isFunction, NOOP, toTypeString } from "@vue/shared";
+import { isPlainObject, isArray, isFunction, NOOP, toTypeString, isString, toRawType } from '@vue/shared';
 
 /**
  * whether the object is a Regular Expression
  * @param {Object} object the given object
  * @return {Boolean}
  */
- export function isRegExp(value: string): boolean {
+export function isRegExp(value: string): boolean {
   return toTypeString(value) === '[object RegExp]';
 }
+export const isServer = typeof window === 'undefined';
+export const isBool = (val: unknown): boolean => typeof val === 'boolean';
+export const isHTMLElement = (val: unknown): boolean => toRawType(val).startsWith('HTML');
 
-export { isArray, isPlainObject, isFunction, NOOP };
+export { isArray, isPlainObject, isFunction, isString, NOOP };
 
 /**
  * return a debounced version of the function

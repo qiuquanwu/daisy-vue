@@ -1,8 +1,8 @@
-import { ExtractPropTypes, PropType } from "vue";
-import { RuleItem } from "async-validator";
-import { YUISize, YUI_SIZE } from "@base/size";
-import { Emitter } from "mitt";
-import { noop } from "./src/util";
+import { ExtractPropTypes, PropType } from 'vue';
+import { RuleItem } from 'async-validator';
+import { Emitter } from 'mitt';
+import { YUISize, YUI_SIZE } from '@base';
+import { noop } from '@components/form/src/util';
 
 export declare interface FormItemRule extends RuleItem {
   trigger?: string;
@@ -20,18 +20,18 @@ export const formProps = {
   },
   validateTrigger: {
     type: String,
-    default: "",
-    validator: (value) => ["", "change", "blur"].includes(value),
+    default: '',
+    validator: (value) => ['', 'change', 'blur'].includes(value),
   },
   inline: Boolean,
   labelAlign: {
     type: String,
-    default: "right",
-    validator: (value) => ["right", "left", "top"].includes(value),
+    default: 'right',
+    validator: (value) => ['right', 'left', 'top'].includes(value),
   },
   size: {
     type: String as PropType<YUISize>,
-    default: "normal",
+    default: 'normal',
     validator: (value) => YUI_SIZE.includes(value),
   },
   showMessage: {
@@ -41,8 +41,8 @@ export const formProps = {
   validateOnRuleChange: Boolean,
   autocomplete: {
     type: String,
-    default: "off",
-    validator: (value) => ["on", "off"].includes(value),
+    default: 'off',
+    validator: (value) => ['on', 'off'].includes(value),
   },
 } as const;
 export interface FormRule {
@@ -75,7 +75,7 @@ export const formItemProps = {
   required: Boolean,
   size: {
     type: String as PropType<YUISize>,
-    default: "normal",
+    default: 'normal',
     validator: (value) => YUI_SIZE.includes(value),
   },
   labelWidth: Number,
@@ -105,8 +105,8 @@ export interface ValidateCallback {
   invalidFields: FormItemProps[];
 }
 
-export const FormKey = "YogaForm";
-export const FormItemKey = "YogaFormItem";
+export const FormKey = 'YogaForm';
+export const FormItemKey = 'YogaFormItem';
 
 export interface ErrorHandlerConfig {
   scrollToError?: boolean;

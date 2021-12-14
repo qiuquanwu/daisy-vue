@@ -12,5 +12,6 @@ export {
   Switch,
   Input,
   InputGroup,
+  Popper,
 // {{COMPONENT}}
 } from "./components";

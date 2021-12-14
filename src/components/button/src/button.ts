@@ -1,17 +1,17 @@
-import { h, defineComponent, PropType, SetupContext } from "vue";
-import { YUISize } from "@base/size";
-import { Icon } from "@components/icon";
-import { ButtonNativeType, ButtonProps, ButtonType } from "../types";
+import { h, defineComponent, PropType, SetupContext } from 'vue';
+import { YUISize } from '@base';
+import { Icon } from '@components/icon';
+import { ButtonNativeType, ButtonProps, ButtonType } from '../types';
 
 export default defineComponent({
-  name: "YButton",
+  name: 'YButton',
   props: {
     type: String as PropType<ButtonType>,
     size: {
       type: String as PropType<YUISize>,
-      default: "normal",
-      validator: (value: string = "normal") =>
-        ["large", "normal", "small"].indexOf(value) >= 0,
+      default: 'normal',
+      validator: (value: string = 'normal') =>
+        ['large', 'normal', 'small'].indexOf(value) >= 0,
     },
     outline: Boolean,
     disabled: Boolean,
@@ -23,14 +23,14 @@ export default defineComponent({
     suffixIcon: String,
     nativeType: {
       type: String as PropType<ButtonNativeType>,
-      default: "button",
-      validator: (value: string = "button") =>
-        ["button", "reset", "submit"].indexOf(value) >= 0,
+      default: 'button',
+      validator: (value: string = 'button') =>
+        ['button', 'reset', 'submit'].indexOf(value) >= 0,
     },
     href: String,
     target: {
       type: String,
-      default: "self",
+      default: 'self',
     },
     onClick: Function as PropType<(e: MouseEvent) => void>,
   },
@@ -54,21 +54,21 @@ export default defineComponent({
       suffixIcon,
     } = props;
     const defaultSlot = slots.default?.();
-    const tagName = href ? "a" : "button";
+    const tagName = href ? 'a' : 'button';
     const buttonClass = {
-      "yoga-button": true,
+      'yoga-button': true,
       [`yoga-button--${type}`]: type,
       [`yoga-button--${size}`]: size,
-      "yoga-button--outline": outline,
-      "yoga-button--dashed": dashed,
-      "yoga-button--block": fullWidth,
-      "yoga-button--round": round,
-      "yoga-button--circle": circle,
-      "yoga-button--disabled": disabled,
-      "yoga-button--underline": href && type === "link",
+      'yoga-button--outline': outline,
+      'yoga-button--dashed': dashed,
+      'yoga-button--block': fullWidth,
+      'yoga-button--round': round,
+      'yoga-button--circle': circle,
+      'yoga-button--disabled': disabled,
+      'yoga-button--underline': href && type === 'link',
     };
     const onClick = (event: MouseEvent) => {
-      document.documentElement.removeAttribute("data-focus-visible");
+      document.documentElement.removeAttribute('data-focus-visible');
       if (disabled) {
         event.preventDefault();
         return;
@@ -84,7 +84,7 @@ export default defineComponent({
       children.push(h(Icon, { src: icon }));
     }
     if (defaultSlot) {
-      children.push(h("span", {}, defaultSlot));
+      children.push(h('span', {}, defaultSlot));
     }
     if (suffixIcon) {
       children.push(h(Icon, { src: suffixIcon }));

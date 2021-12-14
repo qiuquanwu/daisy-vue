@@ -1,4 +1,4 @@
-import { h, computed, defineComponent, SetupContext, inject, provide, reactive, toRefs, onMounted } from "vue";
+import { h, computed, defineComponent, SetupContext, inject, provide, reactive, toRefs } from "vue";
 import mitt from "mitt";
 import { radioGroupProps, RadioGroupProps, RadioGroupMittEvent, RadioGroupKey } from "../types";
 import { FormItemContext, FormItemKey } from "@components/form/types";
@@ -33,12 +33,6 @@ export default defineComponent({
       changeEvent,
     });
     provide(RadioGroupKey, radioGroup);
-
-    onMounted(() => {
-      if (props.type && props.vertical) {
-        console.warn('[yoga-ui]: radio-group vertical would not work with type props');
-      }
-    });
 
     radioGroupMitt.on('radioChange', changeEvent);
 

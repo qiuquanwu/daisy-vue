@@ -1,11 +1,11 @@
 import { ExtractPropTypes, PropType, Ref, ComputedRef } from 'vue';
-import { YUISize, YUI_SIZE } from '@base/size';
+import { YUISize, YUI_SIZE } from '@base';
 import { FormItemContext } from '@components/form/types';
 
 export type AutoSize = { minRows?: number; maxRows?: number };
 export const RESTRICTION_TYPE = {
   VALUE: 'value',
-  INPUT: 'input'
+  INPUT: 'input',
 };
 
 export const TEXTAREA_MIN_ROW = 2;
@@ -52,11 +52,11 @@ export const inputProps = {
   maxlength: Number,
   max: {
     type: Number,
-    default: Infinity
+    default: Infinity,
   },
   min: {
     type: Number,
-    default: -Infinity
+    default: -Infinity,
   },
   error: Boolean,
   errorMessage: String,

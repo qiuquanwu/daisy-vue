@@ -1,5 +1,5 @@
-import { ExtractPropTypes, PropType } from "vue";
-import { YUISize, YUI_SIZE } from "@base/size";
+import { ExtractPropTypes, PropType } from 'vue';
+import { YUISize, YUI_SIZE } from '@base';
 
 export const switchProps = {
   modelValue: {
@@ -11,8 +11,8 @@ export const switchProps = {
   inactiveText: String,
   size: {
     type: String as PropType<YUISize>,
-    default: "normal",
-    validator: (value: string = "normal"): boolean => YUI_SIZE.indexOf(value) >= 0,
+    default: 'normal',
+    validator: (value: string = 'normal'): boolean => YUI_SIZE.indexOf(value) >= 0,
   },
 };
 

@@ -70,10 +70,18 @@ function getGuideSidebar() {
     { text: "输入框 Input", link: "/components/input" },
     { text: "表单 Form", link: "/components/form" },
   ];
+  const messages = [
+    { text: '气泡 Popper', link: "/components/popper" },
+  ];
+
   return [
     {
       text: "表单组件 (" + forms.length + ")",
       children: forms,
+    },
+    {
+      text: "展示组件 (" + messages.length + ")",
+      children: messages,
     },
   ];
 }

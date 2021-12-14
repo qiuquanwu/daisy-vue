@@ -12,8 +12,11 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@directives/*": ["src/directives/*"],
+      "@directives": ["src/directives"],
       "@utils/*": ["src/utils/*"],
       "@base/*": ["src/base/*"],
+      "@base": ["src/base"],
       "@theme/*": ["src/theme/*"]
     }
   },

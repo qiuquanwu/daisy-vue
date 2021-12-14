@@ -1,6 +1,6 @@
-import { Ref, ExtractPropTypes, PropType, ComputedRef } from "vue";
-import { YUISize, YUI_SIZE } from "@base/size";
-import { IModelType } from "@components/radio/types";
+import { Ref, ExtractPropTypes, PropType, ComputedRef } from 'vue';
+import { YUISize, YUI_SIZE } from '@base';
+import { IModelType } from '@components/radio/types';
 
 type IModelValue = boolean | string | number;
 
@@ -46,12 +46,12 @@ export const checkboxGroupProps = {
   vertical: Boolean,
   size: {
     type: String as PropType<YUISize>,
-    default: "normal",
-    validator: (value: string = "normal"): boolean => YUI_SIZE.indexOf(value) >= 0,
+    default: 'normal',
+    validator: (value: string = 'normal'): boolean => YUI_SIZE.indexOf(value) >= 0,
   },
   type: {
     type: String,
-    validator: (value: string): boolean => ["solid", "outline"].indexOf(value) >= 0,
+    validator: (value: string): boolean => ['solid', 'outline'].indexOf(value) >= 0,
   },
   disabled: Boolean,
   fixedWidth: Number, // 固定每一个checkbox的宽度

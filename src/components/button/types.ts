@@ -1,7 +1,7 @@
-import { YUISize } from "@base/size";
+import { YUISize } from '@base';
 
-export type ButtonType = "primary" | "secondary" | "link";
-export type ButtonNativeType = "button" | "reset" | "submit";
+export type ButtonType = 'primary' | 'secondary' | 'link';
+export type ButtonNativeType = 'button' | 'reset' | 'submit';
 
 export interface ButtonProps {
   type?: ButtonType;
