@@ -1,4 +1,3 @@
-import Button from "./src/button";
-import "./styles/button.scss";
-
-export { Button };
+import DButton from './src/Button.vue';
+DButton.name = 'd-button';
+export { DButton };

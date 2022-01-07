@@ -1,18 +1,4 @@
-export * from "./create";
-export * from "./preset";
-export {
-  Icon,
-  Button,
-  Radio,
-  RadioGroup,
-  Form,
-  FormItem,
-  Checkbox,
-  CheckboxGroup,
-  Switch,
-  Input,
-  InputGroup,
-  Popper,
-  Tooltip,
-// {{COMPONENT}}
-} from "./components";
+export * from './create';
+export * from './preset';
+import './style.css';
+export { DButton } from './components';

@@ -1,220 +1,152 @@
-# Button
+# Button(按钮)
 
 
-## Base
+## 基本使用
 
 <code-wrapper>
-<ButtonBase />
+<!-- <ButtonBase /> -->
+
+<Base />
 
  ```vue
 <template>
-  <y-button type="primary">Primary</y-button>
-  <y-button type="primary" outline>Outline</y-button>
-  <y-button>Default</y-button>
-  <y-button dashed>Dashed</y-button>
-  <y-button type="link">Text</y-button>
-  <y-button type="link" href="/" target="__blank">Render a tag</y-button>
+    <Button>neutral</Button>
+    <Button type="primary">primary</Button>
+    <Button type="secondary">secondary</Button>
+    <Button type="link">link</Button>
+    <Button type="accent">accent</Button>
+    <Button type="ghost">ghost</Button>
+    <Button type="info">信息</Button>
+    <Button type="success">成功</Button>
+    <Button type="warning">警告</Button>
+    <Button type="error">错误</Button>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import AddIcon from "./add.svg";
-
-export default defineComponent({
-  name: "Base",
-  setup() {
-    return {
-      AddIcon,
-    };
-  },
-});
+<script setup>
+import Button from './src/Button.vue';
 </script>
-
 ```
 
 </code-wrapper>
 
 
 
-## Disabled
+## 禁用状态
 
 <code-wrapper>
 <ButtonDisabled />
 
  ```vue
 <template>
-  <y-button disabled type="primary">Primary</y-button>
-  <y-button disabled type="primary" outline>Outline</y-button>
-  <y-button disabled>Default</y-button>
-  <y-button disabled dashed>Dashed</y-button>
-  <y-button disabled type="link">Text</y-button>
-  <y-button disabled type="link" href="/" target="__blank">Render a tag</y-button>
+  <Button disabled>neutral</Button>
+  <Button type="primary" disabled>primary</Button>
+  <Button type="secondary" disabled>secondary</Button>
+  <Button type="link" disabled>link</Button>
+  <Button type="accent" disabled>accent</Button>
+  <Button type="ghost" disabled>ghost</Button>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import AddIcon from "./add.svg";
-
-export default defineComponent({
-  name: "Base",
-  setup() {
-    return {
-      AddIcon,
-    };
-  },
-});
+<script setup>
+import Button from './src/Button.vue';
 </script>
 
 ```
 
 </code-wrapper>
 
-
-
-## Dashed
+## OutLine
 
 <code-wrapper>
-<ButtonDashed />
+<OutLine />
 
  ```vue
 <template>
-  <y-button dashed>Dashed</y-button>
-  <y-button dashed :icon="AddIcon">Upload</y-button>
-  <y-button type="primary" dashed>Dashed</y-button>
-  <y-button type="primary" dashed :icon="AddIcon">Upload</y-button>
+  <Button outline>neutral</Button>
+  <Button type="primary" outline>primary</Button>
+  <Button type="secondary" outline>secondary</Button>
+  <Button type="accent" outline>accent</Button>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import AddIcon from "./add.svg";
-
-export default defineComponent({
-  name: "Dashed",
-  setup() {
-    return {
-      AddIcon,
-    };
-  },
-});
+<script setup>
+// src\components\test\OutLine.vue
+import Button from './src/Button.vue';
 </script>
+
 
 ```
 
 </code-wrapper>
 
-
-
-## Circle
-
+## 按钮图标
+## svg图标(ArrowLeft.vue)
 <code-wrapper>
-<ButtonCircle />
+<ArrowLeft class="w-6 h-6"/>
+```vue
+<template>
+  <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path
+      d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"
+    ></path>
+  </svg>
+</template>
+<script>
+import { defineComponent } from 'vue';
+export default defineComponent({
+  name: 'ArrowLeft',
+});
+</script>
+```
+</code-wrapper>
+<code-wrapper>
+<IconButton />
 
  ```vue
 <template>
-  <y-button type="primary" circle :icon="AddIcon"></y-button>
-  <y-button type="primary" outline circle :icon="AddIcon"></y-button>
-  <y-button circle :icon="AddIcon"></y-button>
-  <y-button dashed circle :icon="AddIcon"></y-button>
-  <y-button type="primary" dashed circle :icon="AddIcon"></y-button>
+  <h3>左侧</h3>
+  <Button :icon="Close">默认按钮</Button>
+  <Button type="primary" :icon="Close" outline>主按钮</Button>
+  <Button type="secondary" :icon="Close"> 副按钮</Button>
+  <Button type="accent" :icon="Close">accent</Button>
+  <h3>右侧</h3>
+  <Button type="info" outline :icon="ArrowLeft" icon-postion="right"> 信息</Button>
+  <Button type="success" :icon="ArrowLeft" icon-postion="right">成功</Button>
+  <Button type="warning" :icon="ArrowLeft" icon-postion="right">警告</Button>
+  <Button type="error" :icon="icon" icon-postion="right">错误</Button>
 </template>
-
-<script>
-import { defineComponent } from "vue";
-import AddIcon from "./add.svg";
-
-export default defineComponent({
-  name: "Circle",
-  setup() {
-    return {
-      AddIcon,
-    };
-  },
-});
+<script setup>
+import Button from '../src/Button.vue';
+import Close from '../../icons/Close.vue';
+import ArrowLeft from '../../icons/ArrowLeft.vue';
+import { h } from 'vue';
+let icon = h(ArrowLeft, {}, null);
 </script>
-
 ```
-
 </code-wrapper>
 
-
-
-## Size
+## 按钮大小
 
 <code-wrapper>
-<ButtonSize />
+<SizeButton />
 
  ```vue
 <template>
-  <div class="simple-box">
-    <y-button type="primary" size="small">small</y-button>
-    <y-button type="primary" size="normal">normal</y-button>
-    <y-button type="primary" size="large">large</y-button>
-  </div>
-  <div class="simple-box">
-    <y-button type="primary" :icon="AddIcon" size="small">small</y-button>
-    <y-button type="primary" :icon="AddIcon" size="normal">normal</y-button>
-    <y-button type="primary" :icon="AddIcon" size="large">large</y-button>
-  </div>
+  <Button size="large">large</Button>
+  <Button>normal</Button>
+  <Button size="small">small</Button>
+  <Button size="tiny">tiny</Button>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import AddIcon from "./add.svg";
-
-export default defineComponent({
-  name: "Size",
-  setup() {
-    return {
-      AddIcon,
-    };
-  },
-});
+<script setup>
+import Button from '../src/Button.vue';
 </script>
+
 
 ```
 
 </code-wrapper>
-
-
-
-## Icon
-
-<code-wrapper>
-<ButtonIcon />
-
- ```vue
-<template>
-  <y-button type="primary" :icon="AddIcon">Add</y-button>
-  <y-button :icon="AddIcon">Add</y-button>
-  <y-button :icon="AddIcon"></y-button>
-  <y-button><icon :src="AddIcon" /></y-button>
-  <y-button :suffix-icon="AddIcon">More</y-button>
-  <y-button type="link" :icon="AddIcon">Text Button</y-button>
-  <y-button type="link" :suffix-icon="AddIcon">More</y-button>
-</template>
-
-<script>
-import { defineComponent } from "vue";
-import AddIcon from "./add.svg";
-
-export default defineComponent({
-  name: "Base",
-  setup() {
-    return {
-      AddIcon,
-    };
-  },
-});
-</script>
-
-```
-
-</code-wrapper>
-
-
 
 <style lang="scss">
-.yoga-button {
+button {
   margin-top: 12px;
   margin-right: 12px;
 }
@@ -228,20 +160,20 @@ export default defineComponent({
 
 
 <script>
-import ButtonBase from '../../src/components/button/demo/base.vue';
-import ButtonDisabled from '../../src/components/button/demo/disabled.vue';
-import ButtonDashed from '../../src/components/button/demo/dashed.vue';
-import ButtonCircle from '../../src/components/button/demo/circle.vue';
-import ButtonSize from '../../src/components/button/demo/size.vue';
-import ButtonIcon from '../../src/components/button/demo/icon.vue';
+import ButtonDisabled from '../../src/components/button/demo/Disabled.vue';
+import OutLine from '../../src/components/button/demo/OutLine.vue';
+import Base from '../../src/components/button/demo/Base.vue';
+import IconButton from '../../src/components/button/demo/IconButton.vue';
+import SizeButton from '../../src/components/button/demo/Size.vue';
+import ArrowLeft from "../../src/components/icons/ArrowLeft.vue"
 export default {
 	components: {
-		ButtonBase,
 		ButtonDisabled,
-		ButtonDashed,
-		ButtonCircle,
-		ButtonSize,
-		ButtonIcon
+		OutLine,
+    Base,
+    IconButton,
+    SizeButton,
+    ArrowLeft
 	}
 }
 </script>

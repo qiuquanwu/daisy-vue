@@ -1,11 +1,11 @@
-import DefaultTheme from "vitepress/theme";
-import MyLayout from "./MyLayout.vue";
-import CodeBlock from "../components/code-block.vue";
-import CodeWrapper from "../components/code-wrapper.vue";
-import * as components from "../../../dist/yui.es.js";
-import "../../../dist/yui.css";
-import "./custom.css";
-console.log('components', components)
+import DefaultTheme from 'vitepress/theme';
+import MyLayout from './MyLayout.vue';
+import CodeBlock from '../components/code-block.vue';
+import CodeWrapper from '../components/code-wrapper.vue';
+import * as components from '../../../dist/daisy-vue.es.js';
+import '../../../dist/daisy-vue.css';
+import './custom.css';
+console.log('components', components);
 
 export default {
   ...DefaultTheme,
