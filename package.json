@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "dist/daisy-vue.js",
-  "module": "dist/daisy-vue.es.js",
+  "module": "index.js",
   "umd": "dist/daisy-vue.umd.js",
   "style": "dist/daisy-vue.css",
   "types": "dist/index.d.ts",
