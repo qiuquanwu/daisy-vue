@@ -1,10 +1,17 @@
 <template>
   <div class="code-block" ref="root">
     <div v-if="showAction" class="preview-action">
-      <d-button type="link" size="small" :icon="sandboxIcon" @click="openCodeSandbox" />
-      <d-button type="link" size="small" :icon="copyIcon" class="copy-icon" @click="copyCode" />
-      <d-button type="link" size="small" :icon="editIcon" class="edit-icon" @click="openCodeSandbox" />
-      <d-button size="small" :icon="codeIcon" outline type="info" class="code-icon" @click="toggleDisplayCode"
+      <!-- <d-button type="info" size="tiny" :icon="sandboxIcon" @click="openCodeSandbox" /> -->
+      <d-button type="info" outline :icon="copyIcon" size="tiny" @click="copyCode"
+        >COPY</d-button
+      >
+      <!-- <d-button type="info" size="tiny" :icon="editIcon" @click="openCodeSandbox" /> -->
+      <d-button
+        size="tiny"
+        :icon="codeIcon"
+        outline
+        type="info"
+        @click="toggleDisplayCode"
         >Code</d-button
       >
     </div>
@@ -13,26 +20,26 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref } from 'vue';
-import copyIcon from './copy.svg';
-import codeIcon from './code.vue';
-import editIcon from './edit.svg';
-import sandboxIcon from './sandbox.svg';
-import { getCodeSandboxParams } from './codesandbox';
+import { defineComponent, onMounted, ref } from "vue";
+import copyIcon from "./copy.svg";
+import codeIcon from "./code.vue";
+import editIcon from "./edit.svg";
+import sandboxIcon from "./sandbox.svg";
+import { getCodeSandboxParams } from "./codesandbox";
 
 export default defineComponent({
   props: {
     showAction: Boolean, // only vue show actions
   },
-  name: 'CodeBlock',
+  name: "CodeBlock",
   setup(props, { slots }) {
     const root = ref(null);
     const slot = slots.default ? slots.default() : null;
-    const code = slot ? (slot[0].children[0].el || {}).innerText : '';
+    const code = slot ? (slot[0].children[0].el || {}).innerText : "";
     const openCodeSandbox = () => {
-      const div = document.createElement('div');
+      const div = document.createElement("div");
       const parameters = getCodeSandboxParams(code);
-      div.style.display = 'none';
+      div.style.display = "none";
       div.innerHTML = `<form action="https://codesandbox.io/api/v1/sandboxes/define" method="POST" target="_blank">
 <input type="hidden" name="parameters" value="${parameters}" />
 <input type="submit" value="Open in sandbox" />
@@ -43,15 +50,17 @@ export default defineComponent({
     };
 
     const toggleDisplayCode = () => {
-      const codeWrapEle = root.value ? root.value.querySelector('.line-numbers-mode') : null;
+      const codeWrapEle = root.value
+        ? root.value.querySelector(".line-numbers-mode")
+        : null;
       if (codeWrapEle) {
-        codeWrapEle.style.display = codeWrapEle.style.display !== 'none' ? 'none' : '';
+        codeWrapEle.style.display = codeWrapEle.style.display !== "none" ? "none" : "";
       }
     };
 
     const copyCode = () => {
       navigator.clipboard.writeText(code).then(() => {
-        console.log('copy!', code);
+        console.log("copy!", code);
       });
     };
 

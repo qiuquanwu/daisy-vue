@@ -58,6 +58,6 @@ export default defineComponent({
       innerHTML: (svgEle.cloneNode(true) as HTMLElement).innerHTML,
     });
 
-    return h("i", {}, svg);
+    return h("i", { class: "yoga-icon" }, svg);
   },
 });

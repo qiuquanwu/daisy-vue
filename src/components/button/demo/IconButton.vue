@@ -8,14 +8,14 @@
   <Button type="info" outline :icon="ArrowLeft" icon-postion="right"> 信息</Button>
   <Button type="success" :icon="ArrowLeft" icon-postion="right">成功</Button>
   <Button type="warning" :icon="ArrowLeft" icon-postion="right">警告</Button>
-  <Button type="error" :icon="icon" icon-postion="right">错误</Button>
+  <Button type="error" :icon="icon" icon-postion="right" size="small">错误</Button>
   <Button type="error" :icon="CodeIcon">错误</Button>
 </template>
 <script setup>
-import Button from '../src/Button.vue';
-import Close from '../../icons/Close.vue';
-import ArrowLeft from '../../icons/ArrowLeft.vue';
-import { h } from 'vue';
-import CodeIcon from './code.svg';
+import Button from "../src/Button.vue";
+import Close from "../../icons/Close.vue";
+import ArrowLeft from "../../icons/ArrowLeft.vue";
+import { h } from "vue";
+import CodeIcon from "./code.svg";
 let icon = h(ArrowLeft, {}, null);
 </script>

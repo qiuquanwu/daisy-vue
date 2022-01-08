@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { onMounted, watch, nextTick } from 'vue';
+import { onMounted, watch, nextTick,provide } from 'vue';
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 const { Layout } = DefaultTheme;
@@ -15,6 +15,7 @@ import { remove as removeDiacritics } from 'diacritics';
 // eslint-disable-next-line no-control-regex
 const rControl = /[\u0000-\u001f]/g;
 const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g;
+provide("lang","zh")
 const slugify = (str) => {
   return (
     removeDiacritics(str)
