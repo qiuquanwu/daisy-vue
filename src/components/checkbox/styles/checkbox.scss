@@ -25,7 +25,7 @@ $checkbox-indicator-square: 16px;
       display: block;
       background-color: $white;
       height: 2px;
-      transform: scaleX(.65);
+      transform: scaleX(0.65);
       left: 0;
       right: 0;
       top: 6px;
@@ -41,7 +41,7 @@ $checkbox-indicator-square: 16px;
       border-left: 0;
       border-top: 0;
       border-bottom-right-radius: 1px;
-      transition: transform $duration-time-fast ease-in .05s;
+      transition: transform $duration-time-fast ease-in 0.05s;
       transform-origin: center;
     }
 
@@ -64,7 +64,7 @@ $checkbox-indicator-square: 16px;
       background-color: $primary-color;
 
       &::after {
-        content: " ";
+        content: ' ';
         transform: rotate(45deg);
       }
     }
@@ -76,13 +76,13 @@ $checkbox-indicator-square: 16px;
       background-color: $primary-color;
 
       &::before {
-        content: "";
+        content: '';
       }
     }
   }
 
   &.disabled {
     cursor: not-allowed;
-    opacity: .5;
+    opacity: 0.5;
   }
 }

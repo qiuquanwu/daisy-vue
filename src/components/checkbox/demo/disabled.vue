@@ -2,45 +2,37 @@
   <y-checkbox disabled>Checkbox</y-checkbox>
   <y-checkbox v-model="value" disabled>Checkbox</y-checkbox>
   <y-checkbox-group v-model="groupValue" disabled>
-    <y-checkbox
-      v-for="option in options"
-      :key="option.value"
-      :disabled="option.disabled"
-      :value="option.value">
-      {{option.label}}
+    <y-checkbox v-for="option in options" :key="option.value" :disabled="option.disabled" :value="option.value">
+      {{ option.label }}
     </y-checkbox>
   </y-checkbox-group>
   <y-checkbox-group v-model="groupValue">
-    <y-checkbox
-      v-for="option in options"
-      :key="option.value"
-      :disabled="option.disabled"
-      :value="option.value">
-      {{option.label}}
+    <y-checkbox v-for="option in options" :key="option.value" :disabled="option.disabled" :value="option.value">
+      {{ option.label }}
     </y-checkbox>
   </y-checkbox-group>
 </template>
 
 <script>
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
-  name: "Disabled",
+  name: 'Disabled',
   setup() {
     const state = reactive({
       value: true,
       groupValue: [],
       options: [
-        {value: 'a', label: 'Option A'},
-        {value: 'b', label: 'Option B', disabled: true},
-        {value: 'c', label: 'Option C'},
-        {value: 'd', label: 'Option D'},
+        { value: 'a', label: 'Option A' },
+        { value: 'b', label: 'Option B', disabled: true },
+        { value: 'c', label: 'Option C' },
+        { value: 'd', label: 'Option D' },
       ],
     });
 
     return {
       ...toRefs(state),
     };
-  }
+  },
 });
 </script>

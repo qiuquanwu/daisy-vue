@@ -16,33 +16,33 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import type { ComputedRef } from "vue";
-import type { AlertType } from "../types";
-import { createIcon } from "../../icon/createIcon";
-import { IconType } from "../../icon/types";
-import error from "../../svg/error.svg";
-import info from "../../svg/info.svg";
-import warning from "../../svg/warning.svg";
-import success from "../../svg/success.svg";
+import { computed } from 'vue';
+import type { ComputedRef } from 'vue';
+import type { AlertType } from '../types';
+import { createIcon } from '../../icon/createIcon';
+import { IconType } from '../../icon/types';
+import error from '../../svg/error.svg';
+import info from '../../svg/info.svg';
+import warning from '../../svg/warning.svg';
+import success from '../../svg/success.svg';
 interface AlertProps {
   type?: AlertType;
   icon?: IconType;
 }
-const props = withDefaults(defineProps<AlertProps>(), { type: "default" });
+const props = withDefaults(defineProps<AlertProps>(), { type: 'default' });
 const { type, icon } = props;
 const typeCls: string = new Map<string, string>([
-  ["info", "alert-info"],
-  ["success", "alert-success"],
-  ["warning", "alert-warning"],
-  ["error", "alert-error"],
+  ['info', 'alert-info'],
+  ['success', 'alert-success'],
+  ['warning', 'alert-warning'],
+  ['error', 'alert-error'],
 ]).get(type);
 const typeIcon: string = new Map<string, string>([
-  ["default", info],
-  ["info", info],
-  ["success", success],
-  ["warning", warning],
-  ["error", error],
+  ['default', info],
+  ['info', info],
+  ['success', success],
+  ['warning', warning],
+  ['error', error],
 ]).get(type);
 
 const iconCpd = computed<IconType>(() => {
@@ -50,8 +50,8 @@ const iconCpd = computed<IconType>(() => {
   return createIcon(iconPath);
 });
 const classStr: ComputedRef<string> = computed<string>(() => {
-  let res: string[] = ["alert"];
+  let res: string[] = ['alert'];
   type && res.push(typeCls);
-  return res.join(" ");
+  return res.join(' ');
 });
 </script>

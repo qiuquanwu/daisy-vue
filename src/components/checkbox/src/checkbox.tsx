@@ -23,17 +23,15 @@ export default defineComponent({
           value={this.value}
           checked={this.checkedValue}
           disabled={this.isDisabled}
-          onChange={this.handleValueChange} />
+          onChange={this.handleValueChange}
+        />
         <span class='yoga-checkbox__indicator' />
         {this.$slots.default && (
-          <span
-            ref='labelRef'
-            class='yoga-checkbox__label'
-            style={[this.fixedLabelStyle, this.labelStyles]}>
+          <span ref='labelRef' class='yoga-checkbox__label' style={[this.fixedLabelStyle, this.labelStyles]}>
             {this.$slots.default?.()}
           </span>
         )}
-    </label>
+      </label>
     );
-  }
+  },
 });

@@ -4,16 +4,16 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: "Base",
+  name: 'Base',
   setup() {
     const value = ref(false);
 
     return {
-      value
+      value,
     };
-  }
+  },
 });
 </script>

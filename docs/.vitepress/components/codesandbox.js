@@ -1,4 +1,4 @@
-import { getParameters } from "codesandbox/lib/api/define";
+import { getParameters } from 'codesandbox/lib/api/define';
 
 const indexHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@ function getDeps(code) {
   return (code.match(/from '([^']+)'\n/g) || [])
     .map((v) => v.slice(6, v.length - 2))
     .reduce((prevV, dep) => {
-      prevV[dep] = "latest";
+      prevV[dep] = 'latest';
       return prevV;
     }, {});
 }
@@ -49,29 +49,29 @@ function getDeps(code) {
 export function getCodeSandboxParams(code) {
   return getParameters({
     files: {
-      "package.json": {
+      'package.json': {
         content: {
           dependencies: {
             ...getDeps(code),
-            vue: "next",
-            "vue-router": "next",
-            "naive-ui": "latest",
+            vue: 'next',
+            'vue-router': 'next',
+            'naive-ui': 'latest',
           },
           devDependencies: {
-            "@vue/cli-plugin-babel": "~4.5.0",
+            '@vue/cli-plugin-babel': '~4.5.0',
           },
         },
       },
-      "index.html": {
+      'index.html': {
         content: indexHtml,
       },
-      "src/Demo.vue": {
+      'src/Demo.vue': {
         content: code,
       },
-      "src/App.vue": {
+      'src/App.vue': {
         content: appVue,
       },
-      "src/main.js": {
+      'src/main.js': {
         content: mainJs,
       },
     },

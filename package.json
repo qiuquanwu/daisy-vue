@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "dist/daisy-vue.js",
-  "module": "index.js",
+  "module": "dist/daisy-vue.es.js",
   "umd": "dist/daisy-vue.umd.js",
   "style": "dist/daisy-vue.css",
   "types": "dist/index.d.ts",
@@ -15,7 +15,9 @@
     "lint": "yarn eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write .",
     "catalog": "node bin/gen-catalog.js",
-    "new": "node bin/new-component.js"
+    "new": "node bin/new-component.js",
+    "deploy": "node bin/deploy.js",
+    "docs:build": "vitepress build docs"
   },
   "peerDependencies": {
     "vue": "^3.2.19"
@@ -83,5 +85,7 @@
   },
   "repository": "https://github.com/qiuquanwu/daisy-vue",
   "author": "qiuquanwu",
-  "files": ["/dist/*"]
+  "files": [
+    "/dist/*"
+  ]
 }

@@ -1,10 +1,26 @@
 $switch-on-bg-color: $success;
 $switch-off-bg-color: $black-d8;
 
-$dot-size-map: ("large": 28px, "normal": 20px, "small": 12px);
-$height-map: ("large": 32px, "normal": 24px, "small": 16px);
-$min-with-map: ("large": 64px, "normal": 48px, "small": 32px);
-$label-font-map: ("large": 16px, "normal": 14px, "small": 12px);
+$dot-size-map: (
+  'large': 28px,
+  'normal': 20px,
+  'small': 12px,
+);
+$height-map: (
+  'large': 32px,
+  'normal': 24px,
+  'small': 16px,
+);
+$min-with-map: (
+  'large': 64px,
+  'normal': 48px,
+  'small': 32px,
+);
+$label-font-map: (
+  'large': 16px,
+  'normal': 14px,
+  'small': 12px,
+);
 
 @mixin useSize {
   @each $size, $value in $dot-size-map {
@@ -19,7 +35,7 @@ $label-font-map: ("large": 16px, "normal": 14px, "small": 12px);
         height: $value;
       }
 
-      &.yoga-switch--on{
+      &.yoga-switch--on {
         &::before {
           left: calc(100% - $value - 1px);
           right: 1px;
@@ -72,7 +88,7 @@ $label-font-map: ("large": 16px, "normal": 14px, "small": 12px);
   }
 
   &--disabled {
-    opacity: .5;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 

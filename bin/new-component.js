@@ -15,7 +15,7 @@ if (!componentName) {
 // 获取全部的组件列表
 const componentPath = resolve(__dirname, '../src/components');
 const files = readdirSync(componentPath);
-const allComponents = files.filter(filename => {
+const allComponents = files.filter((filename) => {
   const stat = statSync(join(componentPath, filename));
   return stat.isDirectory();
 });
@@ -40,6 +40,6 @@ Object.values(templates).forEach(({ event, path, temp }) => {
     const fileData = readFileSync(realPath, 'utf-8');
     realTemp = fileData.replace(/\/\/ {{COMPONENT}}/, realTemp + '\n// {{COMPONENT}}');
   }
-  writeFile(realPath, realTemp, {encoding: 'utf-8'});
+  writeFile(realPath, realTemp, { encoding: 'utf-8' });
   console.log(realPath + ': file has been created!');
 });

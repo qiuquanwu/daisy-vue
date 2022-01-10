@@ -7,9 +7,21 @@ $input-small-height: 22px;
 $input-large-padding: 12px;
 $input-normal-padding: 12px;
 $input-small-padding: 8px;
-$height-maps: ("large": $input-large-height, "normal": $input-normal-height, "small": $input-small-height);
-$padding-maps: ("large": 0 $input-large-padding, "normal": 0 $input-normal-padding, "small": 0 $input-small-padding);
-$font-size-maps: ("large": $input-large-font-size, "normal": $input-normal-font-size, "small": $input-small-font-size);
+$height-maps: (
+  'large': $input-large-height,
+  'normal': $input-normal-height,
+  'small': $input-small-height,
+);
+$padding-maps: (
+  'large': 0 $input-large-padding,
+  'normal': 0 $input-normal-padding,
+  'small': 0 $input-small-padding,
+);
+$font-size-maps: (
+  'large': $input-large-font-size,
+  'normal': $input-normal-font-size,
+  'small': $input-small-font-size,
+);
 
 @mixin useSize {
   @each $size, $value in $padding-maps {

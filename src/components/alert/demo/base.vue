@@ -13,8 +13,8 @@
   </Alert>
 </template>
 <script setup>
-import { Alert } from "../index";
-import code from "./code.svg";
+import { Alert } from '../index';
+import code from './code.svg';
 </script>
 
 <style scoped>

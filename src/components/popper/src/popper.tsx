@@ -13,7 +13,7 @@ import {
 } from 'vue';
 import type { SetupContext } from 'vue';
 import { EmitType, popperProps, PopperProps } from '@components/popper/types';
-import { ClickOutside } from '@directives'
+import { ClickOutside } from '@directives';
 import usePopper from '@components/popper/src/hook/use-popper';
 import renderArrow from '@components/popper/src/renderers/arrow';
 import renderPopper from '@components/popper/src/renderers/popper';
@@ -22,13 +22,7 @@ import renderTrigger from '@components/popper/src/renderers/trigger';
 export default defineComponent({
   name: 'YPopper',
   props: popperProps,
-  emits: [
-    'update:visible',
-    'after-enter',
-    'after-leave',
-    'before-enter',
-    'before-leave',
-  ],
+  emits: ['update:visible', 'after-enter', 'after-leave', 'before-enter', 'before-leave'],
   setup(props: PopperProps, context: SetupContext<EmitType[]>) {
     if (!context.slots.trigger) {
       throw new Error('[yoga-ui: Popper]: trigger must be provided');
@@ -91,11 +85,11 @@ export default defineComponent({
         onMouseleave: onPopperMouseLeave,
       },
       [
-        renderSlot($slots, 'default', {}, ()=> {
+        renderSlot($slots, 'default', {}, () => {
           return [toDisplayString(this.content)];
         }),
         arrow,
-      ],
+      ]
     );
     const triggerSlot = $slots.trigger?.();
     const triggerProps = {
@@ -117,5 +111,5 @@ export default defineComponent({
         </Teleport>
       </Fragment>
     );
-  }
+  },
 });

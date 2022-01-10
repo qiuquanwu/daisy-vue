@@ -1,9 +1,9 @@
-import { h, defineComponent, ref, inject, computed, SetupContext } from "vue";
-import { FormItemKey, FormItemContext } from "@components/form/types";
-import { switchProps, SwitchProps } from "@components/switch/types";
+import { h, defineComponent, ref, inject, computed, SetupContext } from 'vue';
+import { FormItemKey, FormItemContext } from '@components/form/types';
+import { switchProps, SwitchProps } from '@components/switch/types';
 
 export default defineComponent({
-  name: "YSwitch",
+  name: 'YSwitch',
   props: switchProps,
   emits: ['update:modelValue', 'change'],
   setup(props: SwitchProps, { emit }: SetupContext) {
@@ -18,9 +18,9 @@ export default defineComponent({
         ['yoga-switch--off']: !realValue.value,
         [`yoga-switch--${size.value}`]: true,
         ['yoga-switch--disabled']: props.disabled,
-      }
+      };
     });
-    const labelText = computed(() => realValue.value ? props.activeText : props.inactiveText);
+    const labelText = computed(() => (realValue.value ? props.activeText : props.inactiveText));
     const handleClick = () => {
       if (props.disabled) {
         return;
@@ -34,7 +34,7 @@ export default defineComponent({
 
     return () => (
       <div class={className.value} onClick={handleClick}>
-        {labelText.value && <div class="yoga-switch__label">{labelText.value}</div>}
+        {labelText.value && <div class='yoga-switch__label'>{labelText.value}</div>}
       </div>
     );
   },

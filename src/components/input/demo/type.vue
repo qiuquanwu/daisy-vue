@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import { defineComponent, reactive } from "vue";
+import { defineComponent, reactive } from 'vue';
 
 export default defineComponent({
-  name: "Type",
+  name: 'Type',
 
   setup() {
     const autosizeConfig = reactive({
@@ -21,6 +21,6 @@ export default defineComponent({
     return {
       autosizeConfig,
     };
-  }
+  },
 });
 </script>

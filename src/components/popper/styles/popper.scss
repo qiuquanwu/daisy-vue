@@ -60,8 +60,6 @@ $placements: (
     }
   }
 
-
-
   @each $placement, $opposite in $placements {
     &[data-popper-placement^='#{$placement}'] > #{$arrow-selector} {
       #{$opposite}: -5px;

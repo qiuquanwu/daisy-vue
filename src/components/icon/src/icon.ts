@@ -1,10 +1,10 @@
-import { h, defineComponent } from "vue";
-import { filterAttrs, copySvgAttrs, download } from "./util";
+import { h, defineComponent } from 'vue';
+import { filterAttrs, copySvgAttrs, download } from './util';
 
 const cache: Record<string, Promise<SVGSVGElement>> = {};
 
 export default defineComponent({
-  name: "Icon",
+  name: 'Icon',
   inheritAttrs: false,
   props: {
     src: {
@@ -52,12 +52,12 @@ export default defineComponent({
       return null;
     }
 
-    const svg = h("svg", {
+    const svg = h('svg', {
       ...copySvgAttrs(svgEle),
       ...filterAttrs(this.$attrs),
       innerHTML: (svgEle.cloneNode(true) as HTMLElement).innerHTML,
     });
 
-    return h("i", {}, svg);
+    return h('i', {}, svg);
   },
 });

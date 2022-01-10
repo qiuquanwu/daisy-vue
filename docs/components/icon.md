@@ -1,22 +1,24 @@
-# Icon
-
+# Icon （图标）
 
 ## Icons
 
 <code-wrapper>
 <IconIcons />
 
- ```vue
+```vue
 <template>
-  <icon :src="AddIcon" />
+  <!-- if you used tailwindcss -->
+  <icon :src="AddIcon" class="w-6 h-6" />
+  <br />
+  <icon :src="AddIcon" style="height:1.5rem;height:1.5rem" />
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import AddIcon from "./add.svg";
+import { defineComponent } from 'vue';
+import AddIcon from './add.svg';
 
 export default defineComponent({
-  name: "Icons",
+  name: 'Icons',
   setup() {
     return {
       AddIcon,
@@ -24,28 +26,24 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.yoga-icon {
-  width: 16px;
-  height: 16px;
-}
-</style>
-
 ```
 
 </code-wrapper>
 
-
-
-
-<script>
+<script setup>
 import IconIcons from '../../src/components/icon/demo/icons.vue';
-export default {
-	components: {
-		IconIcons
-	}
-}
 </script>
+<style lang="scss">
+button {
+  margin-top: 12px;
+  margin-right: 12px;
+}
+.btn-wrap {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 14px 24px;
+  border-radius: 4px;
+}
+</style>
 
 ## API

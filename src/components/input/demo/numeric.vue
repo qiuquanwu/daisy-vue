@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
-  name: "Type",
+  name: 'Type',
 
   setup() {
     const state = reactive({
@@ -22,6 +22,6 @@ export default defineComponent({
     });
 
     return toRefs(state);
-  }
+  },
 });
 </script>

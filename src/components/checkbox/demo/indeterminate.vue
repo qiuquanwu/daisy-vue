@@ -1,27 +1,19 @@
 <template>
-  <y-checkbox
-    v-model="checkAll"
-    :indeterminate="isIndeterminate"
-    @change="handleCheckAllChange">
+  <y-checkbox v-model="checkAll" :indeterminate="isIndeterminate" @change="handleCheckAllChange">
     Check All
   </y-checkbox>
-  <y-checkbox-group
-    v-model="checkedCities"
-    @change="handleCheckedCitiesChange">
-    <y-checkbox
-      v-for="city in cityOptions"
-      :key="city"
-      :value="city">
+  <y-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
+    <y-checkbox v-for="city in cityOptions" :key="city" :value="city">
       {{ city }}
     </y-checkbox>
   </y-checkbox-group>
 </template>
 
 <script>
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
-  name: "Indeterminate",
+  name: 'Indeterminate',
   setup() {
     const state = reactive({
       checkAll: false,
@@ -44,6 +36,6 @@ export default defineComponent({
       handleCheckAllChange,
       handleCheckedCitiesChange,
     };
-  }
+  },
 });
 </script>

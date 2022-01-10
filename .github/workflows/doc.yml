@@ -18,24 +18,24 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # 使用action: actions/checkout获取源码
-    - name: Checkout
-      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-      with:
-        persist-credentials: false
-    # 构建
-    - name: Install and Generate
-      run: |
-        yarn install
-        rm -rf docs/.vitepress/dist
-        node bin/deploy.js
-        node bin/gen-catalog.js
-    - name: Build
-      run: |
-        yarn build
-        ENV=prod yarn vitepress build docs
-        node bin/append-meta.js
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.5
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: docs/.vitepress/dist # The folder the action should deploy.
+      - name: Checkout
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+      # 构建
+      - name: Install and Generate
+        run: |
+          yarn install
+          rm -rf docs/.vitepress/dist
+          node bin/deploy.js
+          node bin/gen-catalog.js
+      - name: Build
+        run: |
+          yarn build
+          ENV=prod yarn vitepress build docs
+          node bin/append-meta.js
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs/.vitepress/dist # The folder the action should deploy.

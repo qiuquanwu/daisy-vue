@@ -66,6 +66,8 @@ function getGuideSidebar() {
     { text: '按钮 Button', link: '/components/button' },
 
     { text: '提示 Alert', link: '/components/alert' },
+    { text: '图标 Icon', link: '/components/icon' },
+    { text: '头像 Avatar', link: '/components/avatar' },
     // { text: '单选框 Radio', link: '/components/radio' },
     // { text: '复选框 Checkbox', link: '/components/checkbox' },
     // { text: '开关 Switch', link: '/components/switch' },

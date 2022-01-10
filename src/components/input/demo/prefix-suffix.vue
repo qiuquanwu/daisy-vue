@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import MaleIcon from "./male.svg";
-import SearchIcon from "./search.svg";
+import { defineComponent } from 'vue';
+import MaleIcon from './male.svg';
+import SearchIcon from './search.svg';
 
 export default defineComponent({
-  name: "PrefixAndSuffix",
+  name: 'PrefixAndSuffix',
 
   setup() {
     return {
       MaleIcon,
       SearchIcon,
     };
-  }
+  },
 });
 </script>

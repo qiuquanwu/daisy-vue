@@ -23,15 +23,15 @@
 </template>
 
 <script>
-import { ref, defineComponent } from "vue";
+import { ref, defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Disabled",
+  name: 'Disabled',
   setup() {
     const type = ref(null);
     const radioValue = ref(null);
-    const radioValue2 = ref("a");
-    const radioValue3 = ref("a");
+    const radioValue2 = ref('a');
+    const radioValue3 = ref('a');
 
     return {
       type,

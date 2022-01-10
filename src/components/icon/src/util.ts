@@ -13,15 +13,9 @@ export function copySvgAttrs(svgEle: SVGSVGElement): Record<string, string> {
   return svgAttrs;
 }
 
-export function filterAttrs(
-  attrs: Record<string, unknown>
-): Record<string, string> {
+export function filterAttrs(attrs: Record<string, unknown>): Record<string, string> {
   return Object.keys(attrs).reduce((result, key) => {
-    if (
-      attrs[key] !== false &&
-      attrs[key] !== null &&
-      attrs[key] !== undefined
-    ) {
+    if (attrs[key] !== false && attrs[key] !== null && attrs[key] !== undefined) {
       result[key] = attrs[key];
     }
     return result;
@@ -32,21 +26,18 @@ export function download(url: string): TPromise {
   return makePromiseState(
     new Promise((resolve, reject) => {
       const request = new XMLHttpRequest();
-      request.open("GET", url, true);
+      request.open('GET', url, true);
 
       request.onload = () => {
         if (request.status >= 200 && request.status < 400) {
           try {
             const parser = new DOMParser();
-            const result = parser.parseFromString(
-              request.responseText,
-              "text/xml"
-            );
-            const svgEle = result.getElementsByTagName("svg")[0];
+            const result = parser.parseFromString(request.responseText, 'text/xml');
+            const svgEle = result.getElementsByTagName('svg')[0];
             if (svgEle) {
               resolve(svgEle);
             } else {
-              reject(new Error("Loaded file is not valid SVG"));
+              reject(new Error('Loaded file is not valid SVG'));
             }
           } catch (error) {
             reject(error);

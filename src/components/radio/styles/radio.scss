@@ -47,7 +47,7 @@ $radio-indicator-margin: 8px;
       height: 6px;
       background-color: $white;
       border-radius: 50%;
-      content: "";
+      content: '';
       transform: scale(0);
       transition: transform $duration-time-fast;
     }

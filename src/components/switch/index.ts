@@ -1,4 +1,4 @@
-import Switch from "./src/switch";
-import "./styles/switch.scss";
+import Switch from './src/switch';
+import './styles/switch.scss';
 
 export { Switch };

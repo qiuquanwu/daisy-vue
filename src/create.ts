@@ -1,7 +1,7 @@
-import { App, DefineComponent } from "vue";
-import { version } from "../package.json";
+import { App, DefineComponent } from 'vue';
+import { version } from '../package.json';
 
-console.log("pkg", version);
+console.log('pkg', version);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
 type ComponentType = DefineComponent<{}, {}, any>;
@@ -17,17 +17,10 @@ interface UiCreateOptions {
   componentPrefix?: string;
 }
 
-export default function create({
-  componentPrefix = "",
-  components = [],
-}: UiCreateOptions = {}): UiInstance {
+export default function create({ componentPrefix = '', components = [] }: UiCreateOptions = {}): UiInstance {
   const installTargets: App[] = [];
 
-  function registerComponent(
-    app: App,
-    name: string,
-    component: ComponentType
-  ): void {
+  function registerComponent(app: App, name: string, component: ComponentType): void {
     const registered = app.component(componentPrefix + name);
     if (!registered) {
       app.component(componentPrefix + name, component);

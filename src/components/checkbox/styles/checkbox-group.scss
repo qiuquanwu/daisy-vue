@@ -1,6 +1,18 @@
-$padding-maps: ("large": 12px 20px, "normal": 10px 18px, "small": 8px 16px);
-$font-size-maps: ("large": 14px, "normal": 14px, "small": 12px);
-$border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
+$padding-maps: (
+  'large': 12px 20px,
+  'normal': 10px 18px,
+  'small': 8px 16px,
+);
+$font-size-maps: (
+  'large': 14px,
+  'normal': 14px,
+  'small': 12px,
+);
+$border-radius-maps: (
+  'large': 4px,
+  'normal': 3px,
+  'small': 2px,
+);
 
 @mixin useSize {
   @each $size, $value in $padding-maps {
@@ -48,14 +60,14 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
       }
 
       &.disabled {
-        @if $type == "solid" {
+        @if $type == 'solid' {
           background-color: $black-ee;
           border-color: $border-color;
 
           .yoga-checkbox__label {
             color: $black-66;
           }
-        } @else if $type == "outline" {
+        } @else if $type == 'outline' {
           .yoga-checkbox__label {
             color: $black-99;
           }
@@ -64,7 +76,7 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
 
       &.checked {
         border-color: $primary-color;
-        @if $type == "solid" {
+        @if $type == 'solid' {
           background-color: $primary-color;
           &::before {
             background-color: $white !important;
@@ -72,14 +84,14 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
           .yoga-checkbox__label {
             color: $white;
           }
-        } @else if $type == "outline" {
+        } @else if $type == 'outline' {
           .yoga-checkbox__label {
             color: $primary-color;
           }
         }
 
         &.disabled {
-          opacity: .5;
+          opacity: 0.5;
         }
 
         &:not(:first-child) {
@@ -88,7 +100,7 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
             top: -1px;
             left: -1px;
             bottom: -1px;
-            content: " ";
+            content: ' ';
             width: 1px;
             background-color: $primary-color;
           }
@@ -116,6 +128,6 @@ $border-radius-maps: ("large": 4px, "normal": 3px, "small": 2px);
     }
   }
 
-  @include useGroup("solid");
-  @include useGroup("outline");
+  @include useGroup('solid');
+  @include useGroup('outline');
 }

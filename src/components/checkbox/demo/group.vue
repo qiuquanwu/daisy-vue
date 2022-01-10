@@ -1,5 +1,5 @@
 <template>
-  <div>{{value}}</div>
+  <div>{{ value }}</div>
   <y-radio-group v-model="type" type="outline">
     <y-radio :value="null">Default</y-radio>
     <y-radio value="solid">Solid</y-radio>
@@ -7,45 +7,38 @@
   </y-radio-group>
   <y-checkbox v-model="disabled">Disabled</y-checkbox>
   <y-checkbox-group v-model="value" :type="type" :disabled="disabled">
-    <y-checkbox
-      v-for="option in options"
-      :key="option.value"
-      :value="option.value">
-      {{option.label}}
+    <y-checkbox v-for="option in options" :key="option.value" :value="option.value">
+      {{ option.label }}
     </y-checkbox>
   </y-checkbox-group>
   <y-checkbox-group v-model="value" vertical :disabled="disabled">
-    <y-checkbox
-      v-for="option in options"
-      :key="option.value"
-      :value="option.value">
-      {{option.label}}
+    <y-checkbox v-for="option in options" :key="option.value" :value="option.value">
+      {{ option.label }}
     </y-checkbox>
   </y-checkbox-group>
 </template>
 
 <script>
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
-  name: "Group",
+  name: 'Group',
   setup() {
     const state = reactive({
       value: [],
       type: null,
       disabled: false,
       options: [
-        {value: 'a', label: 'Option A'},
-        {value: 'b', label: 'Option B'},
-        {value: 'c', label: 'Option C'},
-        {value: 'd', label: 'Option D'},
+        { value: 'a', label: 'Option A' },
+        { value: 'b', label: 'Option B' },
+        { value: 'c', label: 'Option C' },
+        { value: 'd', label: 'Option D' },
       ],
     });
-
 
     return {
       ...toRefs(state),
     };
-  }
+  },
 });
 </script>

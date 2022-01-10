@@ -1,22 +1,22 @@
-import { h, computed, defineComponent, SetupContext, inject, provide, reactive, toRefs } from "vue";
-import mitt from "mitt";
-import { radioGroupProps, RadioGroupProps, RadioGroupMittEvent, RadioGroupKey } from "../types";
-import { FormItemContext, FormItemKey } from "@components/form/types";
-import "../styles/radio-group.scss";
+import { h, computed, defineComponent, SetupContext, inject, provide, reactive, toRefs } from 'vue';
+import mitt from 'mitt';
+import { radioGroupProps, RadioGroupProps, RadioGroupMittEvent, RadioGroupKey } from '../types';
+import { FormItemContext, FormItemKey } from '@components/form/types';
+import '../styles/radio-group.scss';
 
 export default defineComponent({
-  name: "YRadioGroup",
+  name: 'YRadioGroup',
   props: radioGroupProps,
-  emits: ["update:modelValue", "change"],
+  emits: ['update:modelValue', 'change'],
   setup(props: RadioGroupProps, { slots, emit }: SetupContext) {
     const radioGroupMitt = mitt<RadioGroupMittEvent>();
     const formItem = inject(FormItemKey, {} as FormItemContext);
     const className = computed(() => {
       return [
-        "yoga-radio-group",
+        'yoga-radio-group',
         `yoga-radio-group--${props.size}`,
-        {"yoga-radio-group--vertical": props.vertical},
-        {[`yoga-radio-group--${props.type}`]: props.type},
+        { 'yoga-radio-group--vertical': props.vertical },
+        { [`yoga-radio-group--${props.type}`]: props.type },
       ];
     });
 

@@ -1,11 +1,4 @@
-import {
-  toRefs,
-  inject,
-  nextTick,
-  reactive,
-  computed,
-  getCurrentInstance,
-} from 'vue';
+import { toRefs, inject, nextTick, reactive, computed, getCurrentInstance } from 'vue';
 import {
   UseCheckbox,
   CheckboxState,
@@ -30,7 +23,7 @@ export const useCheckbox = (props: CheckboxProps): UseCheckbox => {
 
     return props.modelValue ?? state.selfModel;
   });
-  const isDisabled = computed(() => checkboxGroup ? checkboxGroup.disabled || props.disabled : props.disabled);
+  const isDisabled = computed(() => (checkboxGroup ? checkboxGroup.disabled || props.disabled : props.disabled));
   const checkboxClass = computed(() => {
     return [
       'yoga-checkbox',
@@ -47,7 +40,7 @@ export const useCheckbox = (props: CheckboxProps): UseCheckbox => {
         'max-width': `${checkboxGroup.fixedWidth}px`,
       };
     }
-  })
+  });
   function updateLabelStyle() {
     nextTick(() => {
       if (checkboxGroup && typeof checkboxGroup.fixedWidth === 'number' && state.labelRef?.scrollHeight > 20) {
@@ -67,7 +60,7 @@ export const useCheckbox = (props: CheckboxProps): UseCheckbox => {
     if (checkboxGroup) {
       checkboxGroup.changeEvent({
         key: props.value,
-        value
+        value,
       });
       return;
     }
@@ -88,4 +81,4 @@ export const useCheckbox = (props: CheckboxProps): UseCheckbox => {
     updateLabelStyle,
     handleValueChange,
   };
-}
+};

@@ -5,22 +5,22 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: "Base",
+  name: 'Base',
   setup() {
     const switchValue = ref(false);
     const switchValue2 = ref(true);
-    const handleValueChange = value => {
-      console.log('value:', value)
+    const handleValueChange = (value) => {
+      console.log('value:', value);
       switchValue2.value = value;
-    }
+    };
     return {
       switchValue,
       switchValue2,
       handleValueChange,
     };
-  }
+  },
 });
 </script>

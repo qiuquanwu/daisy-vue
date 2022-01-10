@@ -41,7 +41,7 @@ export interface UseCheckbox {
 export const checkboxGroupProps = {
   modelValue: {
     type: Array as PropType<Array<IModelType>>,
-    default: (): IModelType[] => []
+    default: (): IModelType[] => [],
   },
   vertical: Boolean,
   size: {
@@ -55,7 +55,7 @@ export const checkboxGroupProps = {
   },
   disabled: Boolean,
   fixedWidth: Number, // 固定每一个checkbox的宽度
-}
+};
 
 export interface CheckboxEventParams {
   /** checkbox props value */

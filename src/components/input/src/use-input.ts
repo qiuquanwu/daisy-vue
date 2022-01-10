@@ -16,19 +16,18 @@ export const useComputedState = (props: InputProps, state: InputState): InputCom
       props.clearable && state.currentValue && String(state.currentValue).length > 0 ? 'active-clearable' : '',
     ];
   });
-  const textareaStyle = computed(() => ({...state.textareaCalcStyle, resize: props.resize })); // 这里后面尝试放在初始化里完成
+  const textareaStyle = computed(() => ({ ...state.textareaCalcStyle, resize: props.resize })); // 这里后面尝试放在初始化里完成
   const isWordLimitVisible = computed(() => {
-    return props.showWordLimit &&
-      props.maxlength &&
-      (props.type === 'text' || props.type === 'textarea') &&
-      !props.disabled;
+    return (
+      props.showWordLimit && props.maxlength && (props.type === 'text' || props.type === 'textarea') && !props.disabled
+    );
   });
   const textLength = computed(() => {
     const currentValue = (state.currentValue || '').toString();
     return props.unicodeNormalized ? lengthOf(currentValue) : currentValue.length;
   });
   const isNumber = computed(() => props.type === 'numeric');
-  const computedRestrictionType = computed(() => isNumber.value ? RESTRICTION_TYPE.VALUE : props.restrictionType);
+  const computedRestrictionType = computed(() => (isNumber.value ? RESTRICTION_TYPE.VALUE : props.restrictionType));
   const computedRestriction = computed(() => {
     if (props.restriction) {
       return props.restriction;

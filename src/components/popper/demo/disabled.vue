@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: "Disabled",
+  name: 'Disabled',
   setup() {
     const disabled = ref(false);
 
     return {
-      disabled
+      disabled,
     };
-  }
+  },
 });
 </script>

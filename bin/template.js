@@ -4,13 +4,14 @@ module.exports.demoIndex = {
   temp: `# {{COMPONENT}}
 
 <!-- base -->
-`};
+`,
+};
 
 // src/components/xxx/demo/base.vue
 module.exports.demoBase = {
   path: 'src/components/{{component}}/demo/base.vue',
   temp: `<template>
-  <y-{{component}}></y-{{component}}>
+  <d-{{component}}></d-{{component}}>
 </template>
 
 <script>
@@ -20,12 +21,13 @@ export default defineComponent({
   name: "Base",
 });
 </script>
-`};
+`,
+};
 
 // docs/components/xxx.md
 module.exports.demoDoc = {
   path: 'docs/components/{{component}}.md',
-  temp: ""
+  temp: '',
 };
 
 // src/components/xx/types.ts
@@ -38,12 +40,13 @@ export const {{CAMEL_CASE_COMPONENT}}Props = {
 };
 
 export type {{COMPONENT}}Props = ExtractPropTypes<typeof {{CAMEL_CASE_COMPONENT}}Props>;
-`};
+`,
+};
 
 // src/components/xx/styles/xx.scss
 module.exports.componentStyle = {
   path: 'src/components/{{component}}/styles/{{component}}.scss',
-  temp: ""
+  temp: '',
 };
 
 // src/components/xx/src/xxx.tsx
@@ -53,7 +56,7 @@ module.exports.componentSrc = {
 import { {{CAMEL_CASE_COMPONENT}}Props, {{COMPONENT}}Props } from "../types";
 
 export default defineComponent({
-  name: "Y{{COMPONENT}}",
+  name: "D{{COMPONENT}}",
   props: {{CAMEL_CASE_COMPONENT}}Props,
   setup(props: {{COMPONENT}}Props, { slots }: SetupContext) {
 
@@ -62,7 +65,8 @@ export default defineComponent({
     return <div>{{component}}</div>;
   }
 });
-`};
+`,
+};
 
 // src/components/xx/index.ts
 module.exports.componentIndex = {
@@ -71,7 +75,8 @@ module.exports.componentIndex = {
 import "./styles/{{component}}.scss";
 
 export { {{COMPONENT}} };
-`};
+`,
+};
 
 // src/components/xx/README.md
 module.exports.componentReadme = {
@@ -79,19 +84,19 @@ module.exports.componentReadme = {
   temp: `## API
 
 ### {{COMPONENT}} props
-`};
+`,
+};
 
 // src/components/index.ts
 module.exports.component = {
   path: 'src/components/index.ts',
   event: 'update',
-  temp: 'export * from "./{{component}}";'
+  temp: 'export * from "./{{component}}";',
 };
 
 // src/index.ts
 module.exports.index = {
   path: 'src/index.ts',
   event: 'update',
-  temp: '  {{COMPONENT}},'
+  temp: '  {{COMPONENT}},',
 };
-

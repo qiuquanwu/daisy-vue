@@ -4,18 +4,12 @@
     <y-radio value="b">RadioB</y-radio>
     <y-radio value="c">RadioC</y-radio>
   </y-radio-group>
-  <y-radio-group
-    v-model="radioValue"
-    type="solid"
-    @change="handleValueChange">
+  <y-radio-group v-model="radioValue" type="solid" @change="handleValueChange">
     <y-radio value="a">RadioA</y-radio>
     <y-radio value="b">RadioB</y-radio>
     <y-radio value="c">RadioC</y-radio>
   </y-radio-group>
-  <y-radio-group
-    v-model="radioValue"
-    type="outline"
-    @change="handleValueChange">
+  <y-radio-group v-model="radioValue" type="outline" @change="handleValueChange">
     <y-radio value="a">RadioA</y-radio>
     <y-radio value="b">RadioB</y-radio>
     <y-radio value="c">RadioC</y-radio>
@@ -28,19 +22,19 @@
 </template>
 
 <script>
-import { ref, defineComponent } from "vue";
+import { ref, defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Group",
+  name: 'Group',
   setup() {
     const radioValue = ref(null);
 
     const handleValueChange = (value) => {
-      console.log("value", value);
+      console.log('value', value);
     };
 
     const handleUpdateModel = (value) => {
-      console.log("value", value);
+      console.log('value', value);
       radioValue2.value = value;
     };
 

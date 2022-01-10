@@ -4,6 +4,7 @@
 
 <code-wrapper>
 <BaseAlert/>
+
 ```vue
 <template>
   <Alert>Lorem ipsum dolor sit amet, consectetur adip!</Alert>
@@ -11,11 +12,17 @@
   <Alert type="success">Lorem ipsum dolor sit amet, consectetur adip!</Alert>
   <Alert type="warning">Lorem ipsum dolor sit amet, consectetur adip!</Alert>
   <Alert type="error">Lorem ipsum dolor sit amet, consectetur adip!</Alert>
-  <Alert type="error" :icon="error">自定义图标</Alert>
+  <Alert type="error" :icon="code" fill="currentColor"
+    >自定义图标+插槽
+    <template #end>
+      <button class="mr-2 btn btn-sm btn-ghost">Cancel</button>
+      <button class="btn btn-sm btn-primary">Apply</button>
+    </template>
+  </Alert>
 </template>
 <script setup>
-import { Alert } from "../index";
-import code from "./code.svg";
+import { Alert } from '../index';
+import code from './code.svg';
 </script>
 
 <style scoped>
@@ -27,11 +34,6 @@ import code from "./code.svg";
 
 </code-wrapper>
 
-<script>
+<script setup>
 import BaseAlert from '../../src/components/alert/demo/base.vue';
-export default {
-	components: {
-	  BaseAlert
-	}
-}
 </script>

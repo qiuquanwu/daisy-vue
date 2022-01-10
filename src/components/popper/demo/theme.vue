@@ -7,16 +7,16 @@
   </y-popper>
   <y-popper theme="light">
     <template #trigger>
-      <y-button style="margin-left: 12px;">Light</y-button>
+      <y-button style="margin-left: 12px">Light</y-button>
     </template>
     popper content
   </y-popper>
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Theme",
+  name: 'Theme',
 });
 </script>

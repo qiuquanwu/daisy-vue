@@ -1,22 +1,18 @@
 <template>
-  <y-radio name="radio-demo" v-model="radioValue" @change="handleValueChange">
-    RadioA
-  </y-radio>
-  <y-radio name="radio-demo" v-model="radioValue" @change="handleValueChange">
-    RadioB
-  </y-radio>
+  <y-radio name="radio-demo" v-model="radioValue" @change="handleValueChange"> RadioA </y-radio>
+  <y-radio name="radio-demo" v-model="radioValue" @change="handleValueChange"> RadioB </y-radio>
 </template>
 
 <script>
-import { ref, defineComponent } from "vue";
+import { ref, defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Basic",
+  name: 'Basic',
   setup() {
     const radioValue = ref(false);
 
     const handleValueChange = (value) => {
-      console.log("value", value);
+      console.log('value', value);
     };
 
     return {
