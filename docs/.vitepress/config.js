@@ -4,7 +4,7 @@ const routes = require('./routes.json');
 module.exports = {
   lang: 'zh-CN',
   title: 'daisy-vue',
-  base: env === 'dev' ? './' : '/daisy-vue/',
+  base: env === 'dev' ? '/' : 'daisy-vue/',
   description: 'Vue.js 3 Component Library',
 
   vite: {
@@ -44,15 +44,9 @@ module.exports = {
       { text: '首页', link: '/getting-started', activeMatch: '^/getting-started$' },
       { text: '组件', link: '/components/index', activeMatch: '^/components/' },
       { text: 'utils', link: '/utils/index', activeMatch: '^/utils/' },
-      {
-        text: 'Reference',
-        link: '/learns/index',
-        activeMatch: '^/learns/',
-      },
     ],
     sidebar: {
       '/getting-started': [],
-      '/learns': getLearnSidebar(),
       '/utils': [],
       '/components': getGuideSidebar(),
       '/': [],
@@ -62,20 +56,14 @@ module.exports = {
 
 function getGuideSidebar() {
   const forms = [
-    // { text: '图标 Icon', link: '/components/icon' },
     { text: '按钮 Button', link: '/components/button' },
-
     { text: '提示 Alert', link: '/components/alert' },
     { text: '图标 Icon', link: '/components/icon' },
     { text: '头像 Avatar', link: '/components/avatar' },
-    // { text: '单选框 Radio', link: '/components/radio' },
-    // { text: '复选框 Checkbox', link: '/components/checkbox' },
-    // { text: '开关 Switch', link: '/components/switch' },
-    // { text: '输入框 Input', link: '/components/input' },
-    // { text: '表单 Form', link: '/components/form' },
   ];
   const messages = [
     { text: '安装', link: '/components/popper' },
+    { text: '测试', link: '/components/index' },
     { text: '切换主题', link: '/components/tooltip' },
   ];
 
