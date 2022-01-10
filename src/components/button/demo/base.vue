@@ -1,6 +1,6 @@
 <template>
   <Button>默认按钮</Button>
-  <Button type="primary" outline>主按钮</Button>
+  <Button type="primary">主按钮</Button>
   <Button type="secondary">副按钮</Button>
   <Button type="link">链接</Button>
   <Button type="accent">accent</Button>
@@ -12,5 +12,5 @@
 </template>
 
 <script setup>
-import Button from '../src/Button.vue';
+import Button from "../src/Button.vue";
 </script>

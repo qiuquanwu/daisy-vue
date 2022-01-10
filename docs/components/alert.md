@@ -7,29 +7,23 @@
 
 ```vue
 <template>
-  <Alert>Lorem ipsum dolor sit amet, consectetur adip!</Alert>
-  <Alert type="info">Lorem ipsum dolor sit amet, consectetur adip!</Alert>
-  <Alert type="success">Lorem ipsum dolor sit amet, consectetur adip!</Alert>
-  <Alert type="warning">Lorem ipsum dolor sit amet, consectetur adip!</Alert>
-  <Alert type="error">Lorem ipsum dolor sit amet, consectetur adip!</Alert>
-  <Alert type="error" :icon="code" fill="currentColor"
+  <d-alert>Lorem ipsum dolor sit amet, consectetur adip!</d-alert>
+  <d-alert type="info">Lorem ipsum dolor sit amet, consectetur adip!</d-alert>
+  <d-alert type="success">Lorem ipsum dolor sit amet, consectetur adip!</d-alert>
+  <d-alert type="warning">Lorem ipsum dolor sit amet, consectetur adip!</d-alert>
+  <d-alert type="error">Lorem ipsum dolor sit amet, consectetur adip!</d-alert>
+  <d-alert :icon="code" fill="currentColor"
     >自定义图标+插槽
     <template #end>
       <button class="mr-2 btn btn-sm btn-ghost">Cancel</button>
       <button class="btn btn-sm btn-primary">Apply</button>
     </template>
-  </Alert>
+  </d-alert>
 </template>
 <script setup>
-import { Alert } from '../index';
-import code from './code.svg';
+import code from "./code.svg";
 </script>
 
-<style scoped>
-.alert {
-  margin-top: 12px;
-}
-</style>
 ```
 
 </code-wrapper>
@@ -37,3 +31,9 @@ import code from './code.svg';
 <script setup>
 import BaseAlert from '../../src/components/alert/demo/base.vue';
 </script>
+
+<style>
+.alert {
+  margin-top: 1em;
+}
+</style>

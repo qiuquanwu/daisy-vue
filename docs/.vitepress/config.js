@@ -36,7 +36,7 @@ module.exports = {
     },
   },
   themeConfig: {
-    repo: 'Luoyangs/yoga-ui',
+    repo: 'qiuquanwu/daisy-vue',
     docsDir: 'docs',
     docsBranch: 'master',
     editLinks: false,

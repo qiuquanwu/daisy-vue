@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .theme .page .container {
   max-width: 80rem;
   padding: 1.5rem 1.5rem 4rem;
@@ -14,8 +15,10 @@
 }
 
 .theme .page .container h2 {
+  margin-top: 1em;
   border-bottom: none;
 }
+
 .theme .nav-links .nav-link .item::after {
   content: '';
   position: absolute;
@@ -27,6 +30,7 @@
   background-color: transparent;
   transition: background-color 0.45s;
 }
+
 .theme .nav-links .nav-link .item.active {
   position: relative;
   color: #ee4d2d;
@@ -34,28 +38,33 @@
   transform: scale(1.05);
   border-color: transparent;
 }
+
 .theme .nav-links .nav-link .item.active::after {
   opacity: 1;
   background-color: #ee4d2d;
 }
+
 .theme .nav-links .item:hover .nav-link .item {
   color: #ee4d2d;
   border-color: transparent;
 }
-.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-link-item {
+
+.theme .sidebar>.sidebar-links>.sidebar-link>.sidebar-link-item {
   display: block !important;
   font-size: 13px;
   line-height: 20px;
   color: rgb(158, 164, 170);
 }
-.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > .sidebar-link-item {
+
+.theme .sidebar>.sidebar-links>.sidebar-link>.sidebar-links>.sidebar-link>.sidebar-link-item {
   display: block !important;
   font-size: 14px;
   color: #333;
   line-height: 1.75;
   padding: 5px 5px 5px 38px;
 }
-.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item::before {
+
+.theme .sidebar>.sidebar-links>.sidebar-link>.sidebar-links>.sidebar-link>a.sidebar-link-item::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -68,7 +77,8 @@
   visibility: hidden;
   opacity: 0;
 }
-.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item::after {
+
+.theme .sidebar>.sidebar-links>.sidebar-link>.sidebar-links>.sidebar-link>a.sidebar-link-item::after {
   content: '';
   position: absolute;
   top: 0;
@@ -81,36 +91,43 @@
   transition: background-color 0.3s;
   border-radius: 1px;
 }
-.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item.active {
+
+.theme .sidebar>.sidebar-links>.sidebar-link>.sidebar-links>.sidebar-link>a.sidebar-link-item.active {
   position: relative;
   color: #ee4d2d;
   background: linear-gradient(200deg, #ffe9e8, rgba(248, 250, 255, 0));
   transition: background 0.45s ease-in-out;
 }
-.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item.active::before {
+
+.theme .sidebar>.sidebar-links>.sidebar-link>.sidebar-links>.sidebar-link>a.sidebar-link-item.active::before {
   opacity: 1;
   transform: scale(1) translateX(0);
   background-color: #ee4d2d;
 }
-.theme .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > a.sidebar-link-item.active::after {
+
+.theme .sidebar>.sidebar-links>.sidebar-link>.sidebar-links>.sidebar-link>a.sidebar-link-item.active::after {
   display: block;
   opacity: 1;
   visibility: visible;
   background-color: #ee4d2d;
 }
+
 .theme .sidebar a.sidebar-link-item.active,
 .theme .sidebar a.sidebar-link-item:hover {
   color: #ee4d2d;
 }
+
 .theme .sidebar a.sidebar-link-item {
   display: none !important;
   border-radius: 3px;
   margin: 5px 0px 5px -4px;
 }
+
 .theme .page .container {
   max-width: calc(80rem - 160px);
   margin: 0 0 0 12px;
 }
+
 .theme .table-of-contents {
   position: fixed;
   width: 250px;
@@ -118,28 +135,35 @@
   left: calc(80rem + 130px);
   top: 60px;
   word-break: break-all;
+  margin-top: 1em;
 }
+
 .theme .table-of-contents ul li {
   list-style: none;
   padding-left: 8px;
   border-radius: 3px;
 }
+
 .theme .table-of-contents ul li.active a {
   font-weight: 500;
   color: #ee4d2d;
 }
+
 .theme .table-of-contents ul li.active li a {
   color: #333;
 }
+
 .theme .table-of-contents ul li a {
   font-size: 13px;
   color: #333;
   line-height: 1.5;
 }
+
 .theme .table-of-contents ul li a:hover {
   text-decoration: none;
   color: #ee4d2d;
 }
+
 .theme .simple-box {
   margin-bottom: 16px;
 }
@@ -148,6 +172,7 @@
   .sidebar {
     width: 16rem !important;
   }
+
   .page {
     margin-left: 16rem !important;
   }

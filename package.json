@@ -16,7 +16,7 @@
     "format": "prettier --write .",
     "catalog": "node bin/gen-catalog.js",
     "new": "node bin/new-component.js",
-    "deploy": "node bin/deploy.js",
+    "deploy": "rm -rf dist & rollup -c & vitepress build docs",
     "docs:build": "vitepress build docs"
   },
   "peerDependencies": {
