@@ -4,7 +4,7 @@ const routes = require('./routes.json');
 module.exports = {
   lang: 'zh-CN',
   title: 'daisy-vue',
-  base: env === 'dev' ? '/' : '/daisy-vue/',
+  base: env === 'dev' ? './' : './daisy-vue/',
   description: 'Vue.js 3 Component Library',
 
   vite: {
