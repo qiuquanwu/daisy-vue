@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a,e as i}from"./app.6f31ad5d.js";const h='{"title":"Utils","description":"","frontmatter":{},"relativePath":"utils/index.md","lastUpdated":1641819438399}',s={},l=i('',1),_=[l];function d(n,o,c,r,p,u){return a(),e("div",null,_)}var v=t(s,[["render",d]]);export{h as __pageData,v as default};
