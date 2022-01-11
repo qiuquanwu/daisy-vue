@@ -12,7 +12,7 @@
   <d-avatar :src="src" size="small" circle></d-avatar>
   <d-avatar :src="src" size="tiny" circle></d-avatar>
   <h3>在线标记</h3>
-  <d-avatar :src="src" online size="large"></d-avatar>
+  <d-avatar :src="src" online size="large" circle></d-avatar>
   <d-avatar :src="src" :online="false"></d-avatar>
   <d-avatar :src="src" online size="tiny"></d-avatar>
   <d-avatar :src="src" :size="[60, 60]" online></d-avatar>

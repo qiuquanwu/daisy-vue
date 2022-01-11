@@ -62,9 +62,8 @@ function getGuideSidebar() {
     { text: '头像 Avatar', link: '/components/avatar' },
   ];
   const messages = [
-    { text: '安装', link: '/components/popper' },
-    { text: '测试', link: '/components/index' },
-    { text: '切换主题', link: '/components/tooltip' },
+    { text: '起步', link: '/components/index' },
+    { text: '切换主题', link: '/components/theme' },
   ];
 
   return [
